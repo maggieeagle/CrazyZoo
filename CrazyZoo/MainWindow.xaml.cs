@@ -77,9 +77,12 @@ namespace CrazyZoo
 
                 if (new string(keyBuffer.ToArray()) == Resource1.owlCrazyActionTrigger)
                 {
-                    if (AnimalList.SelectedItem is Owl owl)
+                    foreach (var animal in animals)
                     {
-                        logs.Insert(0, new Log(owl, owl.ActCrazy()));
+                        if (animal is Owl owl)
+                        {
+                            logs.Insert(0, new Log(owl, owl.ActCrazy()));
+                        }
                     }
                     keyBuffer.Clear();
                 }
