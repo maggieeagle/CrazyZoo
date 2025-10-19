@@ -16,7 +16,7 @@ If try to feed monkey with a banana it throws it back.
 
 ## Owl
 
-When owl hears that someone else makes an owl sound (types "hoo" with a keyboard) it flies and share one of owl wisdoms.
+When owl hears that someone else makes an owl sound (types "hoo" with a keyboard) it flies to a convenient place and shares one of owl wisdoms.
 
 ## Zebra
 
