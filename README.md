@@ -12,11 +12,11 @@ Lions are lazy and usually just sleep. But if some time went and they have not b
 
 ## Monkey
 
-If try to feed monkey with banana it throws it back.
+If try to feed monkey with a banana it throws it back.
 
 ## Owl
 
-When owl hears that someone else makes an owl sound (types "hoo" with a keyboard) it flies and share one of owl wisdom.
+When owl hears that someone else makes an owl sound (types "hoo" with a keyboard) it flies and share one of owl wisdoms.
 
 ## Zebra
 
