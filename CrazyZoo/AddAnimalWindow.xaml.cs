@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using CrazyZoo.Classes;
 using CrazyZoo.Properties;
 
 namespace CrazyZoo
@@ -16,6 +17,10 @@ namespace CrazyZoo
         const string monkey = "Monkey";
         const string owl = "Owl";
         const string zebra = "Zebra";
+        const string horse = "Horse";
+        const string hedgehog = "Hedgehog";
+        const string kiwi = "Kiwi";
+
 
         public Animal? NewAnimal { get; private set; }
 
@@ -25,7 +30,10 @@ namespace CrazyZoo
             Lion,
             Monkey,
             Owl,
-            Zebra
+            Zebra,
+            Horse,
+            Kiwi,
+            Hedgehog
         }
 
         public AddAnimalWindow(Animal? animal = null)
@@ -111,6 +119,9 @@ namespace CrazyZoo
                     monkey => new Monkey(name, age, description),
                     owl => new Owl(name, age, description),
                     zebra => new Zebra(name, age, description),
+                    horse => new Horse(name, age, description),
+                    hedgehog => new Hedgehog(name, age, description),
+                    kiwi => new Kiwi(name, age, description),
                     _ => null
                 };
 

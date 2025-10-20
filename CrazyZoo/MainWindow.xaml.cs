@@ -1,4 +1,5 @@
-﻿using CrazyZoo.Properties;
+﻿using CrazyZoo.Classes;
+using CrazyZoo.Properties;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,6 +28,8 @@ namespace CrazyZoo
         private ObservableCollection<Animal> animals;
         private ObservableCollection<Log> logs = new ObservableCollection<Log>();
         private DispatcherTimer feedCheckTimer;
+        private DispatcherTimer hedgehogVisitTimer;
+
         private Queue<char> keyBuffer = new Queue<char>();
 
         public MainWindow()
@@ -34,10 +37,33 @@ namespace CrazyZoo
             InitializeComponent();
             FillData();
             setFeedingTimer();
+            setHedgehogVisitTimer();
             this.KeyDown += MainWindow_KeyDown; // listen at keys on window
             AnimalList.ItemsSource = animals;
             AnimalList.SelectedItem = animals[0];
             Logs.ItemsSource = logs;
+        }
+
+        private void setHedgehogVisitTimer()
+        {
+            hedgehogVisitTimer = new DispatcherTimer();
+            hedgehogVisitTimer.Interval = TimeSpan.FromSeconds(1);
+            hedgehogVisitTimer.Tick += HedgehogVisit_Tick;
+            hedgehogVisitTimer.Start();
+        }
+
+        private void HedgehogVisit_Tick(object sender, EventArgs e)
+        {
+            var localTime = DateTime.Now;
+
+            if (localTime.Hour >= 0 && localTime.Hour < 6)
+            {
+                foreach (var animal in animals)
+                {
+                    if (animal is Hedgehog hedgehog)
+                        logs.Insert(0, new Log(hedgehog, hedgehog.ActCrazy()));
+                }
+            }
         }
 
         // timer for lions feed time
@@ -62,6 +88,8 @@ namespace CrazyZoo
                 }
             }
         }
+
+
 
         // keys for owl wisdoms
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
@@ -124,7 +152,8 @@ namespace CrazyZoo
             if (String.IsNullOrEmpty(AnimalFood.Text))
             {
                 AnimalFoodError.Text = Resource1.foodEmptyStringError;
-            } else
+            }
+            else
             {
                 AnimalFoodError.Text = "";
             }
@@ -173,7 +202,8 @@ namespace CrazyZoo
                 if (animals.Count > 0)
                 {
                     AnimalList.SelectedItem = animals[0];
-                } else
+                }
+                else
                 {
                     AnimalNameValue.Text = "";
                     AnimalAgeValue.Text = "";
