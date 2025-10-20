@@ -121,7 +121,7 @@ namespace CrazyZoo
 
         private void FoodTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (AnimalFood.Text == "")
+            if (String.IsNullOrEmpty(AnimalFood.Text))
             {
                 AnimalFoodError.Text = Resource1.foodEmptyStringError;
             } else
@@ -132,7 +132,7 @@ namespace CrazyZoo
 
         private void FeedButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AnimalFoodError.Text != "")
+            if (!String.IsNullOrEmpty(AnimalFoodError.Text))
             {
                 return;
             }

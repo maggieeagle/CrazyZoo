@@ -22,7 +22,7 @@ namespace CrazyZoo
         {
             Name = name;
             Age = age;
-            if (description != null && description != "")
+            if (!String.IsNullOrEmpty(description))
             {
                 Description = description;
             } else

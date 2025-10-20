@@ -138,11 +138,11 @@ namespace CrazyZoo
 
         bool ErrorsInForm()
         {
-            return AnimalNameError.Text != "" || AnimalAgeError.Text != "";
+            return !String.IsNullOrEmpty(AnimalNameError.Text) || !String.IsNullOrEmpty(AnimalAgeError.Text);
         }
         bool FieldIsEmpty()
         {
-            return AnimalName.Text == "" || AnimalAge.Text == "";
+            return String.IsNullOrEmpty(AnimalName.Text) || String.IsNullOrEmpty(AnimalAge.Text);
         }
     }
 }
