@@ -279,4 +279,34 @@
   <data name="foodEmptyStringError" xml:space="preserve">
     <value>Food cannot be empty string</value>
   </data>
+  <data name="hedgehogPreferableFood" xml:space="preserve">
+    <value>snake</value>
+  </data>
+  <data name="hedgehogSound" xml:space="preserve">
+    <value>squeaky-squeak</value>
+  </data>
+  <data name="hedgehogCrazyAction" xml:space="preserve">
+    <value>At night {0} becomes fast as Sonic and runs all over the place.</value>
+  </data>
+  <data name="kiwiCrazyAction" xml:space="preserve">
+    <value>Kivi transforms into the kivi fruit.</value>
+  </data>
+  <data name="kiwiSound" xml:space="preserve">
+    <value>kee-wee, kee-wee, kee-wee</value>
+  </data>
+  <data name="kiwiPreferableFood" xml:space="preserve">
+    <value>kiwi</value>
+  </data>
+  <data name="horsePreferableFood" xml:space="preserve">
+    <value>carrots</value>
+  </data>
+  <data name="horseSound" xml:space="preserve">
+    <value>eeehh-heee-heeeh</value>
+  </data>
+  <data name="horseCrazyAction" xml:space="preserve">
+    <value>The horse rears and thrashes wildly.</value>
+  </data>
+  <data name="horseCrazyFoodPattern" xml:space="preserve">
+    <value>\b(apple|sugar|oat)\b</value>
+  </data>
 </root>

@@ -19,7 +19,7 @@ namespace CrazyZoo.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resource1 {
@@ -268,6 +268,69 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to At night {0} becomes fast as Sonic and runs all over the place..
+        /// </summary>
+        internal static string hedgehogCrazyAction {
+            get {
+                return ResourceManager.GetString("hedgehogCrazyAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to snake.
+        /// </summary>
+        internal static string hedgehogPreferableFood {
+            get {
+                return ResourceManager.GetString("hedgehogPreferableFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to squeaky-squeak.
+        /// </summary>
+        internal static string hedgehogSound {
+            get {
+                return ResourceManager.GetString("hedgehogSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The horse rears and thrashes wildly..
+        /// </summary>
+        internal static string horseCrazyAction {
+            get {
+                return ResourceManager.GetString("horseCrazyAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to \b(apple|sugar|oat)\b.
+        /// </summary>
+        internal static string horseCrazyFoodPattern {
+            get {
+                return ResourceManager.GetString("horseCrazyFoodPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to carrots.
+        /// </summary>
+        internal static string horsePreferableFood {
+            get {
+                return ResourceManager.GetString("horsePreferableFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to eeehh-heee-heeeh.
+        /// </summary>
+        internal static string horseSound {
+            get {
+                return ResourceManager.GetString("horseSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter correct values.
         /// </summary>
         internal static string incorrectValuesError {
@@ -282,6 +345,33 @@ namespace CrazyZoo.Properties {
         internal static string isLetterRegex {
             get {
                 return ResourceManager.GetString("isLetterRegex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kivi transforms into the kivi fruit..
+        /// </summary>
+        internal static string kiwiCrazyAction {
+            get {
+                return ResourceManager.GetString("kiwiCrazyAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to kiwi.
+        /// </summary>
+        internal static string kiwiPreferableFood {
+            get {
+                return ResourceManager.GetString("kiwiPreferableFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to kee-wee, kee-wee, kee-wee.
+        /// </summary>
+        internal static string kiwiSound {
+            get {
+                return ResourceManager.GetString("kiwiSound", resourceCulture);
             }
         }
         

@@ -1,4 +1,5 @@
-﻿using CrazyZoo.Properties;
+﻿using CrazyZoo.Classes;
+using CrazyZoo.Properties;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,8 @@ namespace CrazyZoo
             InitializeComponent();
             this.KeyDown += MainWindow_KeyDown; // listen at keys on window
         }
+
+
 
         // keys for owl wisdoms
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
