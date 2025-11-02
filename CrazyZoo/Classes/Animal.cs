@@ -18,6 +18,8 @@ namespace CrazyZoo
             }
         }
 
+        public event Action<string>? LogGenerated;
+
         protected Animal(string name, int age, string description)
         {
             Name = name;
@@ -67,6 +69,13 @@ namespace CrazyZoo
 
             }
             return consequence;
+        }
+        public abstract void OnAnimalJoinedInSameEnclosure (Animal animal);
+        public abstract void OnFoodDropped(string food);
+
+        protected void Log(string log)
+        {
+            LogGenerated?.Invoke(log);
         }
     }
 }

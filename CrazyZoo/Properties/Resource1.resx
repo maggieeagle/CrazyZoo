@@ -169,7 +169,7 @@
     <value>hided into water.</value>
   </data>
   <data name="crocodileInterestedAction" xml:space="preserve">
-    <value>is interested in new neighbour {0}.</value>
+    <value>is interested in new zoo inhabitant {0}.</value>
   </data>
   <data name="crocodileIndifferentAction" xml:space="preserve">
     <value>is indifferent to {0}.</value>
@@ -202,7 +202,7 @@
     <value>Owls rotate heads nearly 270°.</value>
   </data>
   <data name="owlWisdom2" xml:space="preserve">
-    <value>Because of special feathers structure to fly silently, owl easily go wet.</value>
+    <value>Because of special feathers structure to fly silently, owls easily go wet.</value>
   </data>
   <data name="owlWisdom3" xml:space="preserve">
     <value>Best pet? Definitely a snake!</value>

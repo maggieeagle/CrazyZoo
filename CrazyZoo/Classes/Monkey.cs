@@ -1,6 +1,6 @@
 ﻿using CrazyZoo;
 using CrazyZoo.Properties;
-
+using CrazyZoo.Interfaces;
 
 public class Monkey : Animal, ICrazyAction
 {
@@ -49,6 +49,17 @@ public class Monkey : Animal, ICrazyAction
     public string ActCrazy(string food)
     {
         return string.Format(Resource1.monkeyFoodCrazyAction, food);
+    }
+
+    public override void OnAnimalJoinedInSameEnclosure(Animal animal)
+    {
+        Log($"is throwing a coconut at {animal.Name}.");
+    }
+
+    public override void OnFoodDropped(string food)
+    {
+        string cleanFood = food.Trim().ToLower();
+        Log($"ate {cleanFood}.");
     }
 }
 

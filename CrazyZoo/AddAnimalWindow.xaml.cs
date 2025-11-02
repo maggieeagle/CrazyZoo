@@ -1,8 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using CrazyZoo.Generics;
+using CrazyZoo.Properties;
+using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using CrazyZoo.Classes;
-using CrazyZoo.Properties;
 
 namespace CrazyZoo
 {
@@ -23,6 +24,9 @@ namespace CrazyZoo
 
 
         public Animal? NewAnimal { get; private set; }
+        public Enclosure<Animal>? SelectedEnclosure { get; private set; }
+
+        private ObservableCollection<Enclosure<Animal>>? Enclosures { get; }
 
         private enum AnimalSpecies
         {
@@ -36,12 +40,16 @@ namespace CrazyZoo
             Hedgehog
         }
 
-        public AddAnimalWindow(Animal? animal = null)
+        public AddAnimalWindow(ObservableCollection<Enclosure<Animal>> enclosures, Animal? animal = null)
         {
             InitializeComponent();
             AnimalSpecieComboBox.ItemsSource = Enum.GetValues(typeof(AnimalSpecies));
             AnimalSpecieComboBox.SelectedIndex = 0;
+            VoljeerComboBox.ItemsSource = enclosures;
+            VoljeerComboBox.DisplayMemberPath = "Name";
+            if (enclosures.Count > 0) VoljeerComboBox.SelectedIndex= 0;
             NewAnimal = animal;
+            Enclosures = enclosures;
         }
 
         private void AnimalNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -124,6 +132,8 @@ namespace CrazyZoo
                     kiwi => new Kiwi(name, age, description),
                     _ => null
                 };
+
+                SelectedEnclosure = Enclosures?[VoljeerComboBox.SelectedIndex];
 
                 if (NewAnimal == null)
                 {
