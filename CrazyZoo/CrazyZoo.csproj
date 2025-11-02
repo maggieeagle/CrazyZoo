@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="9.0.537" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resource1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

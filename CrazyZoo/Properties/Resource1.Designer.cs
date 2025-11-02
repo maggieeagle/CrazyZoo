@@ -187,7 +187,7 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to is interested in new neighbour {0}..
+        ///   Looks up a localized string similar to is interested in new zoo inhabitant {0}..
         /// </summary>
         internal static string crocodileInterestedAction {
             get {
@@ -457,7 +457,7 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Because of special feathers structure to fly silently, owl easily go wet..
+        ///   Looks up a localized string similar to Because of special feathers structure to fly silently, owls easily go wet..
         /// </summary>
         internal static string owlWisdom2 {
             get {

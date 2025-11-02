@@ -1,6 +1,6 @@
 ﻿using CrazyZoo;
 using CrazyZoo.Properties;
-
+using CrazyZoo.Interfaces;
 
 public class Lion : Animal, ICrazyAction
 {
@@ -44,6 +44,31 @@ public class Lion : Animal, ICrazyAction
     {
         HasActedCrazy = true;
         return string.Format(Resource1.lionCrazyAction, DigestTime);
+    }
+
+    public override void OnAnimalJoinedInSameEnclosure(Animal animal)
+    {
+        string log;
+        if (animal is Lion lion)
+        {
+            log = $"doesn't stand {lion.Name} on his territory.";
+        }
+        else if (animal is Zebra zebra)
+        {
+            log = $"is figuring out how to eat {zebra.Name}.";
+        }
+        else  if (animal is Monkey monkey)
+        {
+            log = $"is sure it was better without {monkey.Name}.";
+        }
+        else log = $"is not interested in {animal.Name} and continue basking in the sun.";
+        Log(log);
+    }
+
+    public override void OnFoodDropped(string food)
+    {
+        string cleanFood = food.Trim().ToLower();
+        Log($"ate {cleanFood}.");
     }
 }
 

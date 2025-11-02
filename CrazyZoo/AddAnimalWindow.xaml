@@ -9,21 +9,24 @@
     <Canvas>
         <TextBlock Canvas.Left="11" TextWrapping="Wrap" Text="Add crazy animal" Canvas.Top="20" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <TextBlock TextWrapping="Wrap" Text="Animal specie:" Width="89" HorizontalAlignment="Center" Canvas.Top="83" VerticalAlignment="Top" Canvas.Left="10"/>
-        <ComboBox x:Name="AnimalSpecieComboBox" Canvas.Left="104" Canvas.Top="80" Width="142" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="To voljeer:" Width="89" Canvas.Top="71" Canvas.Left="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <ComboBox x:Name="VoljeerComboBox" Canvas.Left="104" Canvas.Top="68" Width="142" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <TextBlock TextWrapping="Wrap" Text="Name:" Width="53" HorizontalAlignment="Center" Canvas.Top="127" VerticalAlignment="Top" Canvas.Left="10"/>
-        <TextBox Name="AnimalName" TextWrapping="NoWrap" Width="165" RenderTransformOrigin="0.099,2.25" Canvas.Left="81" Canvas.Top="126" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="AnimalNameTextBox_TextChanged"/>
-        <TextBlock Name="AnimalNameError" Canvas.Left="83" TextWrapping="Wrap" Canvas.Top="144" HorizontalAlignment="Center" VerticalAlignment="Top" Width="163" FontSize="8" Foreground="#FFC52020"/>
+        <TextBlock TextWrapping="Wrap" Text="Animal specie:" Width="89" HorizontalAlignment="Center" Canvas.Top="115" VerticalAlignment="Top" Canvas.Left="10"/>
+        <ComboBox x:Name="AnimalSpecieComboBox" Canvas.Left="104" Canvas.Top="112" Width="142" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <TextBlock TextWrapping="Wrap" Text="Age:" Width="67" Canvas.Top="169" Canvas.Left="11" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBox Name="AnimalAge" TextWrapping="Wrap" Width="165" RenderTransformOrigin="0.099,2.25" Canvas.Left="82" Canvas.Top="169" TextChanged="AnimalAgeTextBox_TextChanged" HorizontalAlignment="Center" VerticalAlignment="Top" MaxLength="8"/>
-        <TextBlock Name="AnimalAgeError" Canvas.Left="83" TextWrapping="Wrap" Canvas.Top="187" Width="164" FontSize="8" Foreground="#FFC52020" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="AnimalDescription" TextWrapping="NoWrap" Width="165" RenderTransformOrigin="0.099,2.25" Canvas.Left="81" Canvas.Top="219" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Text="&#xD;&#xA;&#xD;&#xA;"/>
+        <TextBlock TextWrapping="Wrap" Text="Name:" Width="53" HorizontalAlignment="Center" Canvas.Top="159" VerticalAlignment="Top" Canvas.Left="10"/>
+        <TextBox Name="AnimalName" TextWrapping="NoWrap" Width="165" RenderTransformOrigin="0.099,2.25" Canvas.Left="81" Canvas.Top="158" HorizontalAlignment="Center" VerticalAlignment="Top" TextChanged="AnimalNameTextBox_TextChanged"/>
+        <TextBlock Name="AnimalNameError" Canvas.Left="83" TextWrapping="Wrap" Canvas.Top="176" HorizontalAlignment="Center" VerticalAlignment="Top" Width="163" FontSize="8" Foreground="#FFC52020"/>
+
+        <TextBlock TextWrapping="Wrap" Text="Age:" Width="67" Canvas.Top="201" Canvas.Left="11" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Name="AnimalAge" TextWrapping="Wrap" Width="165" RenderTransformOrigin="0.099,2.25" Canvas.Left="82" Canvas.Top="201" TextChanged="AnimalAgeTextBox_TextChanged" HorizontalAlignment="Center" VerticalAlignment="Top" MaxLength="8"/>
+        <TextBlock Name="AnimalAgeError" Canvas.Left="83" TextWrapping="Wrap" Canvas.Top="219" Width="164" FontSize="8" Foreground="#FFC52020" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="AnimalDescription" TextWrapping="NoWrap" Width="165" RenderTransformOrigin="0.099,2.25" Canvas.Left="81" Canvas.Top="251" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Text="&#xD;&#xA;&#xD;&#xA;"/>
 
         <Button Content="Save" Canvas.Left="141" Canvas.Top="366" HorizontalAlignment="Center" VerticalAlignment="Top" Width="92" Click="SaveButton_Click" BorderBrush="#FF4C6CB7" BorderThickness="2,2,2,2"/>
         <Button Content="Cancel" Canvas.Left="20" Canvas.Top="366" Width="92" HorizontalAlignment="Center" VerticalAlignment="Top" Click="CancelButton_Click"/>
         <TextBlock Name="AddAnimalFormError" Canvas.Left="53" TextWrapping="Wrap" Canvas.Top="331" Width="164" Foreground="#FFC52020" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <TextBlock TextWrapping="Wrap" Text="Description:" Width="67" Canvas.Top="220" Canvas.Left="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="Description:" Width="67" Canvas.Top="252" Canvas.Left="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Canvas>
 </Window>

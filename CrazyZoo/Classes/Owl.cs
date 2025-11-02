@@ -1,5 +1,6 @@
 ﻿using CrazyZoo;
 using CrazyZoo.Properties;
+using CrazyZoo.Interfaces;
 
 public enum OwlLocation
 {
@@ -63,6 +64,20 @@ public class Owl : Animal, IFlyable, ICrazyAction
             location.ToString()
                 .Select((c, i) => i > 0 && char.IsUpper(c) ? " " + char.ToLower(c) : c.ToString().ToLower())
         );
+    }
+
+    public override void OnAnimalJoinedInSameEnclosure(Animal animal)
+    {
+        string newName = $"Sir {animal.Name}";
+        string action = $"is knighting {animal.Name}. The zoo will hear of {newName}'s glorious deeds!";
+        animal.Name = newName;
+        Log(action);
+    }
+
+    public override void OnFoodDropped(string food)
+    {
+        string cleanFood = food.Trim().ToLower();
+        Log($"ate {cleanFood}.");
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿using CrazyZoo;
 using CrazyZoo.Properties;
-
+using CrazyZoo.Interfaces;
 
 public class Crocodile : Animal, ICrazyAction
 {
@@ -34,6 +34,23 @@ public class Crocodile : Animal, ICrazyAction
             return string.Format(Resource1.crocodileInterestedAction, animal.Name);
         }
         return string.Format(Resource1.crocodileIndifferentAction, animal.Name);
+    }
+
+    public override void OnAnimalJoinedInSameEnclosure(Animal animal)
+    {
+        string log;
+        if (animal is Crocodile crocodile)
+        {
+            log = $"is swimming to become friends with {crocodile.Name}.";
+        }
+        else log = "\"zzz...\"";
+        Log(log);
+    }
+
+    public override void OnFoodDropped(string food)
+    {
+        string cleanFood = food.Trim().ToLower();
+        Log($"ate {cleanFood}.");
     }
 }
 
