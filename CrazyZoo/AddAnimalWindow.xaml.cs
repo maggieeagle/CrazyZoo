@@ -127,9 +127,6 @@ namespace CrazyZoo
                     monkey => new Monkey(name, age, description),
                     owl => new Owl(name, age, description),
                     zebra => new Zebra(name, age, description),
-                    horse => new Horse(name, age, description),
-                    hedgehog => new Hedgehog(name, age, description),
-                    kiwi => new Kiwi(name, age, description),
                     _ => null
                 };
 

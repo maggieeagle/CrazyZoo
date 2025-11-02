@@ -1,5 +1,4 @@
-﻿using CrazyZoo.Classes;
-using CrazyZoo.Properties;
+﻿using CrazyZoo.Properties;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
