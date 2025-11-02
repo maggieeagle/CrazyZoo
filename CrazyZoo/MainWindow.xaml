@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrazyZoo"
         mc:Ignorable="d"
-        Title="Crazy Zoo" Height="450" Width="615">
+        Title="Crazy Zoo" Height="450" Width="635">
 
 	<Window.DataContext>
 		<local:ZooViewModel/>
@@ -55,6 +55,6 @@
 		<TextBox Name="AnimalFood" HorizontalAlignment="Left" Margin="176,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding AnimalFood, UpdateSourceTrigger=PropertyChanged}"/>
 		<TextBlock Name="AnimalFoodError" HorizontalAlignment="Left" Margin="176,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" FontSize="10" Foreground="#FFC31D1D" Text="{Binding AnimalFoodError}"/>
 		<TextBlock HorizontalAlignment="Left" Margin="122,248,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="493"/>
-		<ListBox Name="Statistics" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Statistics}" HorizontalAlignment="Right" Width="165" Height="264" VerticalAlignment="Top"/>
+		<ListBox Name="Statistics" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Statistics}" HorizontalAlignment="Right" Width="172" Height="264" VerticalAlignment="Top"/>
 	</Grid>
 </Window>

@@ -286,6 +286,20 @@ namespace CrazyZoo
             {
                 _statistics.Add($"{record.Type}s: {record.Count} (avg {record.Average} ages)");
             }
+
+            Animal oldestAnimal = AnimalsRepository.GetAll().OrderByDescending(a => a.Age).FirstOrDefault();
+
+            if (oldestAnimal != null)
+            {
+                _statistics.Add($"The oldest - {oldestAnimal.Type} {oldestAnimal.Name} ({oldestAnimal.Age})");
+            }
+
+            Enclosure<Animal> mostFilledEnclosure = Enclosures.OrderByDescending(e => e.Items.Count()).FirstOrDefault();
+
+            if (mostFilledEnclosure != null)
+            {
+                _statistics.Add($"The largest voljeer - {mostFilledEnclosure.Name}");
+            }
         }
     }
 }
