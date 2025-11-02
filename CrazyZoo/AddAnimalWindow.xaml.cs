@@ -18,10 +18,6 @@ namespace CrazyZoo
         const string monkey = "Monkey";
         const string owl = "Owl";
         const string zebra = "Zebra";
-        const string horse = "Horse";
-        const string hedgehog = "Hedgehog";
-        const string kiwi = "Kiwi";
-
 
         public Animal? NewAnimal { get; private set; }
         public Enclosure<Animal>? SelectedEnclosure { get; private set; }

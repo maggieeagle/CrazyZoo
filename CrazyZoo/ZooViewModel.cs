@@ -1,15 +1,15 @@
+using CrazyZoo.Generics;
+using CrazyZoo.Interfaces;
 using CrazyZoo.Properties;
+using Prism.Commands; // to use DelegateCommand
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using System.ComponentModel;
-using Prism.Commands; // to use DelegateCommand
-using CrazyZoo.Interfaces;
-using CrazyZoo.Generics;
 
-// add new animal
 namespace CrazyZoo
 {
     public class ZooViewModel : INotifyPropertyChanged
@@ -23,6 +23,20 @@ namespace CrazyZoo
             {
                 Animal = animal;
                 Information = information;
+            }
+        }
+
+        public struct RecordItem
+        {
+            public string Type { get; }
+            public int Count { get; }
+            public double Average { get; }
+
+            public RecordItem(string type, int count, double average)
+            {
+                Type = type;
+                Count = count;
+                Average = average;
             }
         }
 
@@ -93,6 +107,7 @@ namespace CrazyZoo
 
         private DispatcherTimer feedCheckTimer;
         private Queue<char> keyBuffer = new Queue<char>();
+        private List<RecordItem> records;
 
         public ZooViewModel()
         {
@@ -263,23 +278,14 @@ namespace CrazyZoo
 
         private void RecalculateStatistics()
         {
-            int crocodileNumber = AnimalsRepository.GetAll().Count(a => a.Type == "Crocodile");
-            double crocodileAverageAge = AnimalsRepository.GetAll().Where(a => a.Type == "Crocodile").Average(a => a.Age);
-            int lionNumber = AnimalsRepository.GetAll().Count(a => a.Type == "Lion");
-            double lionAverageAge = AnimalsRepository.GetAll().Where(a => a.Type == "Lion").Average(a => a.Age);
-            int monkeyNumber = AnimalsRepository.GetAll().Count(a => a.Type == "Monkey");
-            double monkeyAverageAge = AnimalsRepository.GetAll().Where(a => a.Type == "Monkey").Average(a => a.Age);
-            int owlNumber = AnimalsRepository.GetAll().Count(a => a.Type == "Owl");
-            double owlAverageAge = AnimalsRepository.GetAll().Where(a => a.Type == "Owl").Average(a => a.Age);
-            int zebraNumber = AnimalsRepository.GetAll().Count(a => a.Type == "Zebra");
-            double zebraAverageAge = AnimalsRepository.GetAll().Where(a => a.Type == "Zebra").Average(a => a.Age);
-
             _statistics.Clear();
-            _statistics.Add($"Crocodiles: {crocodileNumber} (avg {crocodileAverageAge} ages)");
-            _statistics.Add($"Lions: {lionNumber} (avg {lionAverageAge} ages)");
-            _statistics.Add($"Monkeys: {monkeyNumber} (avg {monkeyAverageAge} ages)");
-            _statistics.Add($"Owls: {owlNumber} (avg {owlAverageAge} ages)");
-            _statistics.Add($"Zebras: {zebraNumber} (avg {zebraAverageAge} ages)");
+            
+            records = AnimalsRepository.GetAll().GroupBy(a => a.Type).Select(g => new RecordItem(g.Key, g.Count(), g.Average(a => a.Age))).ToList();
+
+            foreach (var record in records)
+            {
+                _statistics.Add($"{record.Type}s: {record.Count} (avg {record.Average} ages)");
+            }
         }
     }
 }
