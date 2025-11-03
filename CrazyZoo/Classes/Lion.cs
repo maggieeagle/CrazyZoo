@@ -10,6 +10,9 @@ public class Lion : Animal, ICrazyAction
 
     public Lion(string name, int age, string description) : base(name, age, description)
     {
+        timeBetweenBites = 10;
+        bitesUntilFull = 10;
+        setEatProgressTimer();
     }
 
     public override string PreferableFood
@@ -51,24 +54,24 @@ public class Lion : Animal, ICrazyAction
         string log;
         if (animal is Lion lion)
         {
-            log = $"doesn't stand {lion.Name} on his territory.";
+            log = string.Format(Resource1.lionOnLionJoinedInSameEnclosureAction, lion.Name);
         }
         else if (animal is Zebra zebra)
         {
-            log = $"is figuring out how to eat {zebra.Name}.";
+            log = string.Format(Resource1.lionOnZebraJoinedInSameEnclosureAction, zebra.Name);
         }
-        else  if (animal is Monkey monkey)
+        else if (animal is Monkey monkey)
         {
-            log = $"is sure it was better without {monkey.Name}.";
+            log = string.Format(Resource1.lionOnMonkeyJoinedInSameEnclosureAction, monkey.Name);
         }
-        else log = $"is not interested in {animal.Name} and continue basking in the sun.";
+        else log = string.Format(Resource1.lionOnAnimalJoinedInSameEnclosureAction, animal.Name);
         Log(log);
     }
 
     public override void OnFoodDropped(string food)
     {
         string cleanFood = food.Trim().ToLower();
-        Log($"ate {cleanFood}.");
+        FoodDropped = cleanFood;
     }
 }
 

@@ -25,6 +25,9 @@ public class Owl : Animal, IFlyable, ICrazyAction
 
     public Owl(string name, int age, string description) : base(name, age, description)
     {
+        timeBetweenBites = 1;
+        bitesUntilFull = 3;
+        setEatProgressTimer();
     }
 
     public override string PreferableFood
@@ -68,8 +71,8 @@ public class Owl : Animal, IFlyable, ICrazyAction
 
     public override void OnAnimalJoinedInSameEnclosure(Animal animal)
     {
-        string newName = $"Sir {animal.Name}";
-        string action = $"is knighting {animal.Name}. The zoo will hear of {newName}'s glorious deeds!";
+        string newName = String.Format(Resource1.owlNewAnimalName, animal.Name);
+        string action = String.Format(Resource1.owlOnAnimalJoinedInSameEnclosureAction, animal.Name, newName);
         animal.Name = newName;
         Log(action);
     }
@@ -77,7 +80,7 @@ public class Owl : Animal, IFlyable, ICrazyAction
     public override void OnFoodDropped(string food)
     {
         string cleanFood = food.Trim().ToLower();
-        Log($"ate {cleanFood}.");
+        FoodDropped = cleanFood;
     }
 }
 

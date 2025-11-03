@@ -7,54 +7,55 @@
         mc:Ignorable="d"
         Title="Crazy Zoo" Height="450" Width="635">
 
-	<Window.DataContext>
-		<local:ZooViewModel/>
-	</Window.DataContext>
+    <Window.DataContext>
+        <local:ZooViewModel/>
+    </Window.DataContext>
 
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition Width="0*"/>
-		</Grid.ColumnDefinitions>
-		<ListBox Name="AnimalList" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding AnimalsRepository.Items}" SelectedItem="{Binding SelectedAnimal}" RenderTransformOrigin="-0.626,0.529" Height="264" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Type}" />
-						<TextBlock Text=" " />
-						<TextBlock Text="{Binding Name}" />
-					</StackPanel>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
-		<ListBox Name="Logs" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Logs}" Margin="0,264,0,0">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Animal.Type}" />
-						<TextBlock Text=" " />
-						<TextBlock Text="{Binding Animal.Name}" FontWeight="Bold" />
-						<TextBlock Text=": " />
-						<TextBlock Text="{Binding Information}" />
-					</StackPanel>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
-		<TextBlock HorizontalAlignment="Left" Margin="180,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="16"><Run Text="Voljeer:"/><LineBreak/><Run/><LineBreak/><Run Text=":"/></TextBlock>
-		<TextBlock x:Name="VoljeerValue" HorizontalAlignment="Left" Margin="254,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="16"  Text="{Binding SelectedAnimalEnclosureName}"/>
-		<TextBlock HorizontalAlignment="Left" Margin="180,40,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="42" Height="16"/>
-		<TextBlock Name="AnimalNameValue" HorizontalAlignment="Left" Margin="254,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="16"  Text="{Binding SelectedAnimal.Name}"/>
-		<TextBlock HorizontalAlignment="Left" Margin="180,61,0,0" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top" Width="42" Height="16"/>
-		<TextBlock Name="AnimalAgeValue" HorizontalAlignment="Left" Margin="254,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Height="16"  Text="{Binding SelectedAnimal.Age}"/>
-		<TextBlock HorizontalAlignment="Left" Margin="180,82,0,0" TextWrapping="Wrap" Text="Description:" VerticalAlignment="Top" Width="69" Height="16"/>
-		<TextBlock Name="AnimalDescriptionValue" HorizontalAlignment="Left" Margin="254,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Height="52" Text="{Binding SelectedAnimal.Description}"/>
-		<Button Content="Make sound" HorizontalAlignment="Left" Margin="176,132,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,0.453" Height="20" Width="70" Command="{Binding MakeSoundCommand}"/>
-		<Button Content="Feed" HorizontalAlignment="Left" Margin="307,172,0,0" VerticalAlignment="Top" Height="20" Width="30"  Command="{Binding FeedCommand}"/>
-		<Button Content="Shelter new animal" HorizontalAlignment="Left" Margin="176,219,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,0.453" Command="{Binding AddAnimalCommand}" Height="20" Width="120"/>
-		<Button Content="Release animal" HorizontalAlignment="Left" Margin="336,219,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,0.453" Command="{Binding RemoveAnimalCommand}" Height="20" Width="92"/>
-		<TextBox Name="AnimalFood" HorizontalAlignment="Left" Margin="176,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding AnimalFood, UpdateSourceTrigger=PropertyChanged}"/>
-		<TextBlock Name="AnimalFoodError" HorizontalAlignment="Left" Margin="176,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" FontSize="10" Foreground="#FFC31D1D" Text="{Binding AnimalFoodError}"/>
-		<TextBlock HorizontalAlignment="Left" Margin="122,248,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="493"/>
-		<ListBox Name="Statistics" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Statistics}" HorizontalAlignment="Right" Width="172" Height="264" VerticalAlignment="Top"/>
-	</Grid>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="AnimalList" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding AnimalsRepository.Items}" SelectedItem="{Binding SelectedAnimal}" RenderTransformOrigin="-0.626,0.529" Height="264" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Type}" />
+                        <TextBlock Text=" " />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Name="Logs" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Logs}" Margin="0,264,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Animal.Type}" />
+                        <TextBlock Text=" " />
+                        <TextBlock Text="{Binding Animal.Name}" FontWeight="Bold" />
+                        <TextBlock Text=": " />
+                        <TextBlock Text="{Binding Information}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="180,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="16"><Run Text="Voljeer:"/><LineBreak/><Run/><LineBreak/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="VoljeerValue" HorizontalAlignment="Left" Margin="254,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="16"  Text="{Binding SelectedAnimalEnclosureName}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="180,40,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="42" Height="16"/>
+        <TextBlock Name="AnimalNameValue" HorizontalAlignment="Left" Margin="254,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="16"  Text="{Binding SelectedAnimal.Name}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="180,61,0,0" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top" Width="42" Height="16"/>
+        <TextBlock Name="AnimalAgeValue" HorizontalAlignment="Left" Margin="254,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Height="16"  Text="{Binding SelectedAnimal.Age}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="180,82,0,0" TextWrapping="Wrap" Text="Description:" VerticalAlignment="Top" Width="69" Height="16"/>
+        <TextBlock Name="AnimalDescriptionValue" HorizontalAlignment="Left" Margin="254,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Height="52" Text="{Binding SelectedAnimal.Description}"/>
+        <Button Content="Make sound" HorizontalAlignment="Left" Margin="176,132,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,0.453" Height="20" Width="70" Command="{Binding MakeSoundCommand}"/>
+        <Button Content="Feed" HorizontalAlignment="Left" Margin="306,172,0,0" VerticalAlignment="Top" Height="20" Width="30"  Command="{Binding FeedCommand}"/>
+        <Button Content="Drop to voljeer" HorizontalAlignment="Left" Margin="342,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,0.453" Height="20" Width="86" Command="{Binding DropFoodCommand}"/>
+        <Button Content="Shelter new animal" HorizontalAlignment="Left" Margin="176,219,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,0.453" Command="{Binding AddAnimalCommand}" Height="20" Width="120"/>
+        <Button Content="Release animal" HorizontalAlignment="Left" Margin="336,219,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,0.453" Command="{Binding RemoveAnimalCommand}" Height="20" Width="92"/>
+        <TextBox Name="AnimalFood" HorizontalAlignment="Left" Margin="176,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding AnimalFood, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Name="AnimalFoodError" HorizontalAlignment="Left" Margin="176,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" FontSize="10" Foreground="#FFC31D1D" Text="{Binding AnimalFoodError}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="122,248,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="493"/>
+        <ListBox Name="Statistics" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Statistics}" HorizontalAlignment="Right" Width="172" Height="264" VerticalAlignment="Top"/>
+    </Grid>
 </Window>

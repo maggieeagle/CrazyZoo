@@ -1,11 +1,15 @@
 ﻿using CrazyZoo;
-using CrazyZoo.Properties;
 using CrazyZoo.Interfaces;
+using CrazyZoo.Properties;
+using System.Windows.Threading;
 
 public class Crocodile : Animal, ICrazyAction
 {
     public Crocodile(string name, int age, string description) : base(name, age, description)
     {
+        timeBetweenBites = 2;
+        bitesUntilFull = 2;
+        setEatProgressTimer();
     }
 
     public override string PreferableFood
@@ -41,16 +45,16 @@ public class Crocodile : Animal, ICrazyAction
         string log;
         if (animal is Crocodile crocodile)
         {
-            log = $"is swimming to become friends with {crocodile.Name}.";
+            log = string.Format(Resource1.crocodileOnCrocodileJoinedInSameEnclosureAction, crocodile.Name);
         }
-        else log = "\"zzz...\"";
+        else log = Resource1.crocodileOnAnimalJoinedInSameEnclosureAction;
         Log(log);
     }
 
     public override void OnFoodDropped(string food)
     {
         string cleanFood = food.Trim().ToLower();
-        Log($"ate {cleanFood}.");
+        FoodDropped = cleanFood;
     }
 }
 

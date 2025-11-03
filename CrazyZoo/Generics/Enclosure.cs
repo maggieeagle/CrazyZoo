@@ -50,6 +50,8 @@ namespace CrazyZoo.Generics
             AnimalJoinedInSameEnclosure -= item.OnAnimalJoinedInSameEnclosure;
             FoodDropped -= item.OnFoodDropped;
 
+            item.EatProgressTimer.Stop();
+
             Items.Remove(item);
         }
 

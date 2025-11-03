@@ -30,10 +30,7 @@ namespace CrazyZoo
             Lion,
             Monkey,
             Owl,
-            Zebra,
-            Horse,
-            Kiwi,
-            Hedgehog
+            Zebra
         }
 
         public AddAnimalWindow(ObservableCollection<Enclosure<Animal>> enclosures, Animal? animal = null)

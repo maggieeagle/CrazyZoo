@@ -29,6 +29,5 @@ namespace CrazyZoo
                 zvm.FollowKeysPressed(e);
             }
         }
-
     }
 }

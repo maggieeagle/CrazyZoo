@@ -8,6 +8,9 @@ public class Monkey : Animal, ICrazyAction
 
     public Monkey(string name, int age, string description) : base(name, age, description)
     {
+        timeBetweenBites = 1;
+        bitesUntilFull = 15;
+        setEatProgressTimer();
     }
 
     public override string PreferableFood
@@ -53,13 +56,13 @@ public class Monkey : Animal, ICrazyAction
 
     public override void OnAnimalJoinedInSameEnclosure(Animal animal)
     {
-        Log($"is throwing a coconut at {animal.Name}.");
+        Log(string.Format(Resource1.monkeyOnAnimalJoinedInSameEnclosureAction, animal.Name));
     }
 
     public override void OnFoodDropped(string food)
     {
         string cleanFood = food.Trim().ToLower();
-        Log($"ate {cleanFood}.");
+        FoodDropped = cleanFood;
     }
 }
 

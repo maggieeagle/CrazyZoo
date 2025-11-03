@@ -309,4 +309,67 @@
   <data name="horseCrazyFoodPattern" xml:space="preserve">
     <value>\b(apple|sugar|oat)\b</value>
   </data>
+  <data name="isEating" xml:space="preserve">
+    <value>is eating {0} - progress {1}</value>
+  </data>
+  <data name="progressBarFilledElement" xml:space="preserve">
+    <value>█</value>
+  </data>
+  <data name="progressBarEmptyElement" xml:space="preserve">
+    <value>▒</value>
+  </data>
+  <data name="crocodileOnCrocodileJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is swimming to become friends with {0}.</value>
+  </data>
+  <data name="crocodileOnAnimalJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>"zzz..."</value>
+  </data>
+  <data name="lionOnLionJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>doesn't stand {0} on his territory.</value>
+  </data>
+  <data name="lionOnZebraJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is figuring out how to eat {0}.</value>
+  </data>
+  <data name="lionOnMonkeyJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is sure it was better without {0}.</value>
+  </data>
+  <data name="lionOnAnimalJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is not interested in {0} and continue basking in the sun.</value>
+  </data>
+  <data name="monkeyOnAnimalJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is throwing a coconut at {0}.</value>
+  </data>
+  <data name="owlNewAnimalName" xml:space="preserve">
+    <value>Sir {0}</value>
+  </data>
+  <data name="owlOnAnimalJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is knighting {0}. The zoo will hear of {1}'s glorious deeds!</value>
+  </data>
+  <data name="zebraOnZebraJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is showing flower to {0}.</value>
+  </data>
+  <data name="zebraOnAnimalJoinedInSameEnclosureAction" xml:space="preserve">
+    <value>is not sure it is a good idea to become friends with {0}.</value>
+  </data>
+  <data name="animalWalksFreely" xml:space="preserve">
+    <value>This animal walks freely</value>
+  </data>
+  <data name="savannaVoljeerName" xml:space="preserve">
+    <value>Savanna</value>
+  </data>
+  <data name="tropicsVoljeerName" xml:space="preserve">
+    <value>Tropics</value>
+  </data>
+  <data name="forestVoljeerName" xml:space="preserve">
+    <value>Forest</value>
+  </data>
+  <data name="statisticsRecord" xml:space="preserve">
+    <value>{0}s: {1} (avg {2} ages)</value>
+  </data>
+  <data name="statisticsRecordOldest" xml:space="preserve">
+    <value>The oldest - {0} {1} ({2})</value>
+  </data>
+  <data name="statisticsRecordLargestVoljeer" xml:space="preserve">
+    <value>The largest voljeer - {0}</value>
+  </data>
 </root>

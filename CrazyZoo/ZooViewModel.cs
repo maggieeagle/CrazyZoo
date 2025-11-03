@@ -43,6 +43,7 @@ namespace CrazyZoo
         public Repository<Animal> AnimalsRepository { get; } = new Repository<Animal>();
         public ObservableCollection<Enclosure<Animal>> Enclosures { get; } = new ObservableCollection<Enclosure<Animal>>();
 
+        public DelegateCommand DropFoodCommand { get; }
         public DelegateCommand MakeSoundCommand { get; }
         public DelegateCommand ValidateFoodCommand { get; }
         public DelegateCommand FeedCommand { get; }
@@ -57,7 +58,7 @@ namespace CrazyZoo
                 OnPropertyChanged(nameof(SelectedAnimal));
                 AnimalFood = _selected?.PreferableFood ?? string.Empty;
                 Enclosure<Animal> enclosure = Enclosures.FirstOrDefault(e => e.Items.Contains(SelectedAnimal));
-                SelectedAnimalEnclosureName = enclosure?.Name ?? "This animal walks freely";
+                SelectedAnimalEnclosureName = enclosure?.Name ?? Resource1.animalWalksFreely;
             }
         }
 
@@ -74,19 +75,19 @@ namespace CrazyZoo
 
         public ObservableCollection<Log> Logs { get; } = new ObservableCollection<Log>();
 
-        private string _animalFood = "";
+        private string _animalFood = String.Empty;
         public string? AnimalFood
         {
             get => _animalFood;
             set
             {
-                _animalFood = value != null ? value : "";
+                _animalFood = value != null ? value : String.Empty;
                 OnPropertyChanged(nameof(AnimalFood));
                 ValidateFood();
             }
         }
 
-        private string _animalFoodError = "";
+        private string _animalFoodError = String.Empty;
         public string AnimalFoodError
         {
             get => _animalFoodError;
@@ -111,6 +112,7 @@ namespace CrazyZoo
 
         public ZooViewModel()
         {
+            DropFoodCommand = new DelegateCommand(DropFood);
             MakeSoundCommand = new DelegateCommand(MakeSound);
             ValidateFoodCommand = new DelegateCommand(() => ValidateFood());
             FeedCommand = new DelegateCommand(() => Feed());
@@ -131,12 +133,16 @@ namespace CrazyZoo
 
             foreach (var animal in AnimalsRepository.GetAll())
             {
-                animal.LogGenerated += log => Logs.Insert(0, new Log(animal, log));
+                animal.LogGenerated += log => {
+                    if (AnimalsRepository.Items.Contains(animal)) {
+                        Logs.Insert(0, new Log(animal, log));
+                    }
+                };
             }
 
-            Enclosure<Animal> savannaVoljeer = new Enclosure<Animal>("Savanna");
-            Enclosure<Animal> tropicalVoljeer = new Enclosure<Animal>("Tropics");
-            Enclosure<Animal> forestVoljeer = new Enclosure<Animal>("Forest");
+            Enclosure<Animal> savannaVoljeer = new Enclosure<Animal>(Resource1.savannaVoljeerName);
+            Enclosure<Animal> tropicalVoljeer = new Enclosure<Animal>(Resource1.tropicsVoljeerName);
+            Enclosure<Animal> forestVoljeer = new Enclosure<Animal>(Resource1.forestVoljeerName);
             Enclosures.Add(savannaVoljeer);
             Enclosures.Add(tropicalVoljeer);
             Enclosures.Add(forestVoljeer);
@@ -168,7 +174,7 @@ namespace CrazyZoo
             {
                 if (animal is Lion lion)
                 {
-                    if ((DateTime.Now - lion.LastFedTime).TotalSeconds > lion.DigestTime && lion.HasActedCrazy == false)
+                    if ((DateTime.Now - lion.LastFedTime).TotalSeconds > lion.DigestTime && lion.HasActedCrazy == false && lion.FoodDropped == string.Empty)
                     {
                         Logs.Insert(0, new Log(lion, lion.ActCrazy()));
                     }
@@ -209,6 +215,11 @@ namespace CrazyZoo
                 return (char)('a' + (key - Key.A));
             }
             return '\0'; // non-letter keys ignored
+        }
+
+        public void DropFood()
+        {
+            FindSelectedAnimalEnclosure()?.DropFood(AnimalFood);
         }
 
         public void MakeSound()
@@ -265,9 +276,11 @@ namespace CrazyZoo
         public void RemoveAnimal()
         {
             if (SelectedAnimal == null) return;
+
+            FindSelectedAnimalEnclosure()?.Remove(SelectedAnimal);
             AnimalsRepository.Remove(SelectedAnimal);
 
-            SelectedAnimal = AnimalsRepository.GetAll().FirstOrDefault(); // FirstOrDefault in Repository class
+            SelectedAnimal = AnimalsRepository.GetAll().FirstOrDefault();
             RecalculateStatistics();
         }
 
@@ -284,22 +297,37 @@ namespace CrazyZoo
 
             foreach (var record in records)
             {
-                _statistics.Add($"{record.Type}s: {record.Count} (avg {record.Average} ages)");
+                _statistics.Add(String.Format(Resource1.statisticsRecord, record.Type, record.Count, FormatValue(record.Average)));
             }
 
             Animal oldestAnimal = AnimalsRepository.GetAll().OrderByDescending(a => a.Age).FirstOrDefault();
 
             if (oldestAnimal != null)
             {
-                _statistics.Add($"The oldest - {oldestAnimal.Type} {oldestAnimal.Name} ({oldestAnimal.Age})");
+                _statistics.Add(String.Format(Resource1.statisticsRecordOldest, oldestAnimal.Type, oldestAnimal.Name, oldestAnimal.Age));
             }
 
             Enclosure<Animal> mostFilledEnclosure = Enclosures.OrderByDescending(e => e.Items.Count()).FirstOrDefault();
 
             if (mostFilledEnclosure != null)
             {
-                _statistics.Add($"The largest voljeer - {mostFilledEnclosure.Name}");
+                _statistics.Add(String.Format(Resource1.statisticsRecordLargestVoljeer, mostFilledEnclosure.Name));
             }
+        }
+
+        private Enclosure<Animal> FindSelectedAnimalEnclosure()
+        {
+
+            Enclosure<Animal> enclosure = Enclosures.FirstOrDefault(e => e.Name == SelectedAnimalEnclosureName);
+            if (enclosure == null || AnimalFood == null) return null;
+            return enclosure;
+        }
+
+        private string FormatValue(double value)
+        {
+            if ((int)value == value) return value.ToString();
+            return value.ToString("F2");
+
         }
     }
 }

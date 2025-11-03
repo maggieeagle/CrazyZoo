@@ -19,7 +19,7 @@ namespace CrazyZoo.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resource1 {
@@ -115,6 +115,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This animal walks freely.
+        /// </summary>
+        internal static string animalWalksFreely {
+            get {
+                return ResourceManager.GetString("animalWalksFreely", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ate {0}..
         /// </summary>
         internal static string ate {
@@ -205,6 +214,24 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;zzz...&quot;.
+        /// </summary>
+        internal static string crocodileOnAnimalJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("crocodileOnAnimalJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is swimming to become friends with {0}..
+        /// </summary>
+        internal static string crocodileOnCrocodileJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("crocodileOnCrocodileJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fish.
         /// </summary>
         internal static string crocodilePreferableFood {
@@ -264,6 +291,15 @@ namespace CrazyZoo.Properties {
         internal static string foodEmptyStringError {
             get {
                 return ResourceManager.GetString("foodEmptyStringError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forest.
+        /// </summary>
+        internal static string forestVoljeerName {
+            get {
+                return ResourceManager.GetString("forestVoljeerName", resourceCulture);
             }
         }
         
@@ -340,6 +376,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to is eating {0} - progress {1}.
+        /// </summary>
+        internal static string isEating {
+            get {
+                return ResourceManager.GetString("isEating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ^[a-zA-Z\s]+$.
         /// </summary>
         internal static string isLetterRegex {
@@ -403,6 +448,42 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to is not interested in {0} and continue basking in the sun..
+        /// </summary>
+        internal static string lionOnAnimalJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("lionOnAnimalJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to doesn&apos;t stand {0} on his territory..
+        /// </summary>
+        internal static string lionOnLionJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("lionOnLionJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is sure it was better without {0}..
+        /// </summary>
+        internal static string lionOnMonkeyJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("lionOnMonkeyJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is figuring out how to eat {0}..
+        /// </summary>
+        internal static string lionOnZebraJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("lionOnZebraJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Meat.
         /// </summary>
         internal static string lionPreferableFood {
@@ -453,6 +534,15 @@ namespace CrazyZoo.Properties {
         internal static string monkeyName {
             get {
                 return ResourceManager.GetString("monkeyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is throwing a coconut at {0}..
+        /// </summary>
+        internal static string monkeyOnAnimalJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("monkeyOnAnimalJoinedInSameEnclosureAction", resourceCulture);
             }
         }
         
@@ -520,6 +610,24 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sir {0}.
+        /// </summary>
+        internal static string owlNewAnimalName {
+            get {
+                return ResourceManager.GetString("owlNewAnimalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is knighting {0}. The zoo will hear of {1}&apos;s glorious deeds!.
+        /// </summary>
+        internal static string owlOnAnimalJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("owlOnAnimalJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mouse.
         /// </summary>
         internal static string owlPreferableFood {
@@ -583,6 +691,69 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ▒.
+        /// </summary>
+        internal static string progressBarEmptyElement {
+            get {
+                return ResourceManager.GetString("progressBarEmptyElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to █.
+        /// </summary>
+        internal static string progressBarFilledElement {
+            get {
+                return ResourceManager.GetString("progressBarFilledElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Savanna.
+        /// </summary>
+        internal static string savannaVoljeerName {
+            get {
+                return ResourceManager.GetString("savannaVoljeerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}s: {1} (avg {2} ages).
+        /// </summary>
+        internal static string statisticsRecord {
+            get {
+                return ResourceManager.GetString("statisticsRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The largest voljeer - {0}.
+        /// </summary>
+        internal static string statisticsRecordLargestVoljeer {
+            get {
+                return ResourceManager.GetString("statisticsRecordLargestVoljeer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The oldest - {0} {1} ({2}).
+        /// </summary>
+        internal static string statisticsRecordOldest {
+            get {
+                return ResourceManager.GetString("statisticsRecordOldest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tropics.
+        /// </summary>
+        internal static string tropicsVoljeerName {
+            get {
+                return ResourceManager.GetString("tropicsVoljeerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to is now full of energy, runs around and bucks..
         /// </summary>
         internal static string zebraCrazyAction {
@@ -615,6 +786,24 @@ namespace CrazyZoo.Properties {
         internal static string zebraName {
             get {
                 return ResourceManager.GetString("zebraName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is not sure it is a good idea to become friends with {0}..
+        /// </summary>
+        internal static string zebraOnAnimalJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("zebraOnAnimalJoinedInSameEnclosureAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is showing flower to {0}..
+        /// </summary>
+        internal static string zebraOnZebraJoinedInSameEnclosureAction {
+            get {
+                return ResourceManager.GetString("zebraOnZebraJoinedInSameEnclosureAction", resourceCulture);
             }
         }
         

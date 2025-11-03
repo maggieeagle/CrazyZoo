@@ -6,8 +6,12 @@ public class Zebra : Animal, ICrazyAction
 {
     private const int portionsLimit = 5;
     private int foodPortions = 0;
+
     public Zebra(string name, int age, string description) : base(name, age, description)
     {
+        timeBetweenBites = 1;
+        bitesUntilFull = 20;
+        setEatProgressTimer();
     }
 
     public override string PreferableFood
@@ -51,11 +55,11 @@ public class Zebra : Animal, ICrazyAction
         string log;
         if (animal is Zebra zebra)
         {
-            log = $"is showing flower to {zebra.Name}.";
+            log = String.Format(Resource1.zebraOnZebraJoinedInSameEnclosureAction, zebra.Name);
         }
         else
         {
-            log = $"is not sure it is a good idea to become friends with {animal.Name}.";
+            log = String.Format(Resource1.zebraOnAnimalJoinedInSameEnclosureAction, animal.Name);
         }
         Log(log);
     }
@@ -63,7 +67,7 @@ public class Zebra : Animal, ICrazyAction
     public override void OnFoodDropped(string food)
     {
         string cleanFood = food.Trim().ToLower();
-        Log($"ate {cleanFood}.");
+        FoodDropped = cleanFood;
     }
 }
 
