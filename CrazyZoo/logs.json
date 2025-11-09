@@ -1,0 +1,167 @@
+[
+  {
+    "Animal": {
+      "Name": "Simba",
+      "Age": 2,
+      "Description": "Likes to eat and sleep.",
+      "PreferableFood": "Meat",
+      "Type": "Lion"
+    },
+    "Information": "is eating meat - progress \u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:20.2708619-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:20.3037293-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:22.3485223-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:23.7258543-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:24.7708062-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:25.7940913-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:26.8652029-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:28.4803817-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:29.5088289-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Simba",
+      "Age": 2,
+      "Description": "Likes to eat and sleep.",
+      "PreferableFood": "Meat",
+      "Type": "Lion"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:30.7557327-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:30.7661161-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:31.9108871-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:33.0744733-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:34.4559162-08:00"
+  },
+  {
+    "Animal": {
+      "Name": "Marty",
+      "Age": 4,
+      "Description": "Was born in savanna and moved to the zoo at 1 year old. Sometimes bites.",
+      "PreferableFood": "Grass",
+      "Type": "Zebra"
+    },
+    "Information": "is eating meat - progress \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2592\u2592\u2592\u2592\u2592\u2592\u2592",
+    "Timestamp": "2025-11-09T12:15:35.5064134-08:00"
+  }
+]

@@ -88,6 +88,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Animal.
+        /// </summary>
+        internal static string animalElementXml {
+            get {
+                return ResourceManager.GetString("animalElementXml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name is too long!.
         /// </summary>
         internal static string animalNameIsTooLongError {
@@ -268,6 +277,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [].
+        /// </summary>
+        internal static string emptyListJson {
+            get {
+                return ResourceManager.GetString("emptyListJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter only digits.
         /// </summary>
         internal static string enterDigitsError {
@@ -282,6 +300,24 @@ namespace CrazyZoo.Properties {
         internal static string enterLettersError {
             get {
                 return ResourceManager.GetString("enterLettersError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to logs.json.
+        /// </summary>
+        internal static string filenameLogJson {
+            get {
+                return ResourceManager.GetString("filenameLogJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to logs.xml.
+        /// </summary>
+        internal static string filenameLogXml {
+            get {
+                return ResourceManager.GetString("filenameLogXml", resourceCulture);
             }
         }
         
@@ -372,6 +408,15 @@ namespace CrazyZoo.Properties {
         internal static string incorrectValuesError {
             get {
                 return ResourceManager.GetString("incorrectValuesError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string informationElementXml {
+            get {
+                return ResourceManager.GetString("informationElementXml", resourceCulture);
             }
         }
         
@@ -498,6 +543,24 @@ namespace CrazyZoo.Properties {
         internal static string lionSound {
             get {
                 return ResourceManager.GetString("lionSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1}.
+        /// </summary>
+        internal static string log {
+            get {
+                return ResourceManager.GetString("log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log.
+        /// </summary>
+        internal static string logElementXml {
+            get {
+                return ResourceManager.GetString("logElementXml", resourceCulture);
             }
         }
         
@@ -691,6 +754,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ...
+        /// </summary>
+        internal static string pathBack {
+            get {
+                return ResourceManager.GetString("pathBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ▒.
         /// </summary>
         internal static string progressBarEmptyElement {
@@ -705,6 +777,15 @@ namespace CrazyZoo.Properties {
         internal static string progressBarFilledElement {
             get {
                 return ResourceManager.GetString("progressBarFilledElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logs.
+        /// </summary>
+        internal static string rootElementXml {
+            get {
+                return ResourceManager.GetString("rootElementXml", resourceCulture);
             }
         }
         
@@ -741,6 +822,15 @@ namespace CrazyZoo.Properties {
         internal static string statisticsRecordOldest {
             get {
                 return ResourceManager.GetString("statisticsRecordOldest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timestamp.
+        /// </summary>
+        internal static string timestampElementXml {
+            get {
+                return ResourceManager.GetString("timestampElementXml", resourceCulture);
             }
         }
         

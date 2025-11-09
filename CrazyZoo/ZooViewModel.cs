@@ -1,7 +1,10 @@
+using CrazyZoo.Classes;
 using CrazyZoo.Generics;
 using CrazyZoo.Interfaces;
 using CrazyZoo.Properties;
+using Microsoft.Extensions.DependencyInjection;
 using Prism.Commands; // to use DelegateCommand
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -9,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
+using static CrazyZoo.ZooViewModel;
 
 namespace CrazyZoo
 {
@@ -39,7 +43,6 @@ namespace CrazyZoo
                 Average = average;
             }
         }
-
         public Repository<Animal> AnimalsRepository { get; } = new Repository<Animal>();
         public ObservableCollection<Enclosure<Animal>> Enclosures { get; } = new ObservableCollection<Enclosure<Animal>>();
 
@@ -110,8 +113,12 @@ namespace CrazyZoo
         private Queue<char> keyBuffer = new Queue<char>();
         private List<RecordItem> records;
 
-        public ZooViewModel()
+        private readonly ILogger _logger;
+
+        public ZooViewModel(ILogger logger)
         {
+            _logger = logger;
+
             DropFoodCommand = new DelegateCommand(DropFood);
             MakeSoundCommand = new DelegateCommand(MakeSound);
             ValidateFoodCommand = new DelegateCommand(() => ValidateFood());
@@ -136,6 +143,8 @@ namespace CrazyZoo
                 animal.LogGenerated += log => {
                     if (AnimalsRepository.Items.Contains(animal)) {
                         Logs.Insert(0, new Log(animal, log));
+                        _logger.Log(new Log(animal, log));
+
                     }
                 };
             }
@@ -177,6 +186,7 @@ namespace CrazyZoo
                     if ((DateTime.Now - lion.LastFedTime).TotalSeconds > lion.DigestTime && lion.HasActedCrazy == false && lion.FoodDropped == string.Empty)
                     {
                         Logs.Insert(0, new Log(lion, lion.ActCrazy()));
+                        _logger.Log(new Log(lion, lion.ActCrazy()));
                     }
                 }
             }
@@ -201,6 +211,7 @@ namespace CrazyZoo
                         if (animal is Owl owl)
                         {
                             Logs.Insert(0, new Log(owl, owl.ActCrazy()));
+                            _logger.Log(new Log(owl, owl.ActCrazy()));
                         }
                     }
                     keyBuffer.Clear();
@@ -227,6 +238,7 @@ namespace CrazyZoo
             if (SelectedAnimal == null) return;
             string sound = SelectedAnimal.MakeSound();
             Logs.Insert(0, new Log(SelectedAnimal, $"\"{sound}\""));
+            _logger.Log(new Log(SelectedAnimal, $"\"{sound}\""));
         }
 
         public void ValidateFood()
@@ -245,6 +257,7 @@ namespace CrazyZoo
         {
             if (SelectedAnimal == null || String.IsNullOrEmpty(AnimalFood) || !String.IsNullOrEmpty(AnimalFoodError)) return;
             Logs.Insert(0, new Log(SelectedAnimal, SelectedAnimal.EatFood(AnimalFood)));
+            _logger.Log(new Log(SelectedAnimal, SelectedAnimal.EatFood(AnimalFood)));
         }
 
         public void AddAnimal()
@@ -267,6 +280,7 @@ namespace CrazyZoo
                 if (animal is Crocodile crocodile && animal != newAnimal)
                 {
                     Logs.Insert(0, new Log(crocodile, crocodile.ActCrazy(newAnimal)));
+                    _logger.Log(new Log(crocodile, crocodile.ActCrazy(newAnimal)));
                 }
             }
 

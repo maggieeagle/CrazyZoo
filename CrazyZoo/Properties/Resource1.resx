@@ -372,4 +372,34 @@
   <data name="statisticsRecordLargestVoljeer" xml:space="preserve">
     <value>The largest voljeer - {0}</value>
   </data>
+  <data name="log" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="pathBack" xml:space="preserve">
+    <value>..</value>
+  </data>
+  <data name="filenameLogJson" xml:space="preserve">
+    <value>logs.json</value>
+  </data>
+  <data name="emptyListJson" xml:space="preserve">
+    <value>[]</value>
+  </data>
+  <data name="filenameLogXml" xml:space="preserve">
+    <value>logs.xml</value>
+  </data>
+  <data name="rootElementXml" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="logElementXml" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="animalElementXml" xml:space="preserve">
+    <value>Animal</value>
+  </data>
+  <data name="informationElementXml" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="timestampElementXml" xml:space="preserve">
+    <value>Timestamp</value>
+  </data>
 </root>
