@@ -43,8 +43,9 @@ namespace CrazyZoo
                 Average = average;
             }
         }
-        public Repository<Animal> AnimalsRepository { get; } = new Repository<Animal>();
-        public ObservableCollection<Enclosure<Animal>> Enclosures { get; } = new ObservableCollection<Enclosure<Animal>>();
+
+        public ObservableCollection<Enclosure<Animal>> Enclosures=> _enclosuresRepository.Items;
+        public ObservableCollection<Animal> Animals => _animalsRepository.Items;
 
         public DelegateCommand DropFoodCommand { get; }
         public DelegateCommand MakeSoundCommand { get; }
@@ -60,7 +61,7 @@ namespace CrazyZoo
             set { _selected = value;
                 OnPropertyChanged(nameof(SelectedAnimal));
                 AnimalFood = _selected?.PreferableFood ?? string.Empty;
-                Enclosure<Animal> enclosure = Enclosures.FirstOrDefault(e => e.Items.Contains(SelectedAnimal));
+                Enclosure<Animal> enclosure = FindSelectedAnimalEnclosure();
                 SelectedAnimalEnclosureName = enclosure?.Name ?? Resource1.animalWalksFreely;
             }
         }
@@ -114,47 +115,34 @@ namespace CrazyZoo
         private List<RecordItem> records;
 
         private readonly ILogger _logger;
+        private IRepository<Animal> _animalsRepository;
+        private IRepository<Enclosure<Animal>> _enclosuresRepository;
 
-        public ZooViewModel(ILogger logger)
+        public ZooViewModel(ILogger logger, IRepository<Animal> animalRepository, IRepository<Enclosure<Animal>> enclosureRepository)
         {
             _logger = logger;
+            _animalsRepository = animalRepository;
+            _enclosuresRepository = enclosureRepository;
 
-            DropFoodCommand = new DelegateCommand(DropFood);
-            MakeSoundCommand = new DelegateCommand(MakeSound);
-            ValidateFoodCommand = new DelegateCommand(() => ValidateFood());
-            FeedCommand = new DelegateCommand(() => Feed());
-            AddAnimalCommand = new DelegateCommand(() => AddAnimal());
-            RemoveAnimalCommand = new DelegateCommand(() => RemoveAnimal(), () => SelectedAnimal != null);
-
-            Animal lion = new Lion(Resource1.lionName, 2, Resource1.lionDescription);
-            Animal zebra = new Zebra(Resource1.zebraName, 4, Resource1.zebraDescription);
-            Animal crocodile = new Crocodile(Resource1.crocodileName, 3, Resource1.crocodileDescription);
-            Animal monkey = new Monkey(Resource1.monkeyName, 3, Resource1.monkeyDescription);
-            Animal owl = new Owl(Resource1.owlName, 10, Resource1.owlDescription);
-
-            AnimalsRepository.Add(lion);
-            AnimalsRepository.Add(zebra);
-            AnimalsRepository.Add(crocodile);
-            AnimalsRepository.Add(monkey);
-            AnimalsRepository.Add(owl);
-
-            foreach (var animal in AnimalsRepository.GetAll())
-            {
-                animal.LogGenerated += log => {
-                    if (AnimalsRepository.Items.Contains(animal)) {
-                        Logs.Insert(0, new Log(animal, log));
-                        _logger.Log(new Log(animal, log));
-
-                    }
-                };
-            }
+            Animal lion = new Lion(Resource1.lionName, 2, Resource1.lionDescription, 1);
+            Animal zebra = new Zebra(Resource1.zebraName, 4, Resource1.zebraDescription, 1);
+            Animal crocodile = new Crocodile(Resource1.crocodileName, 3, Resource1.crocodileDescription, 2);
+            Animal monkey = new Monkey(Resource1.monkeyName, 3, Resource1.monkeyDescription, 2);
+            Animal owl = new Owl(Resource1.owlName, 10, Resource1.owlDescription, 3);
 
             Enclosure<Animal> savannaVoljeer = new Enclosure<Animal>(Resource1.savannaVoljeerName);
             Enclosure<Animal> tropicalVoljeer = new Enclosure<Animal>(Resource1.tropicsVoljeerName);
             Enclosure<Animal> forestVoljeer = new Enclosure<Animal>(Resource1.forestVoljeerName);
-            Enclosures.Add(savannaVoljeer);
-            Enclosures.Add(tropicalVoljeer);
-            Enclosures.Add(forestVoljeer);
+
+            _enclosuresRepository.Add(savannaVoljeer);
+            _enclosuresRepository.Add(tropicalVoljeer);
+            _enclosuresRepository.Add(forestVoljeer);
+
+            _animalsRepository.Add(lion);
+            _animalsRepository.Add(zebra);
+            _animalsRepository.Add(crocodile);
+            _animalsRepository.Add(monkey);
+            _animalsRepository.Add(owl);
 
             savannaVoljeer.AddSilently(lion);
             savannaVoljeer.AddSilently(zebra);
@@ -162,7 +150,34 @@ namespace CrazyZoo
             tropicalVoljeer.AddSilently(monkey);
             forestVoljeer.AddSilently(owl);
 
-            SelectedAnimal = AnimalsRepository.GetAll().FirstOrDefault();
+            /*foreach (var enclosure in _enclosuresRepository.GetAll())
+            {
+                Enclosures.Add(enclosure);
+            }
+            /*foreach (var animal in _animalsRepository.GetAll())
+            {
+                _animalsRepository.Add(animal);
+            }*/
+            
+            DropFoodCommand = new DelegateCommand(DropFood);
+            MakeSoundCommand = new DelegateCommand(MakeSound);
+            ValidateFoodCommand = new DelegateCommand(() => ValidateFood());
+            FeedCommand = new DelegateCommand(() => Feed());
+            AddAnimalCommand = new DelegateCommand(() => AddAnimal());
+            RemoveAnimalCommand = new DelegateCommand(() => RemoveAnimal(), () => SelectedAnimal != null);
+
+            foreach (var animal in _animalsRepository.GetAll())
+            {
+                animal.LogGenerated += log => {
+                    if (_animalsRepository.GetAll().Contains(animal)) {
+                        Logs.Insert(0, new Log(animal, log));
+                        _logger.Log(new Log(animal, log));
+
+                    }
+                };
+            }
+
+            SelectedAnimal = _animalsRepository.GetAll().FirstOrDefault();
             setFeedingTimer();
             RecalculateStatistics();
 
@@ -179,7 +194,7 @@ namespace CrazyZoo
 
         private void FeedCheckTimer_Tick(object sender, EventArgs e)
         {
-            foreach (var animal in AnimalsRepository.GetAll())
+            foreach (var animal in _animalsRepository.GetAll())
             {
                 if (animal is Lion lion)
                 {
@@ -206,7 +221,7 @@ namespace CrazyZoo
 
                 if (new string(keyBuffer.ToArray()) == Resource1.owlCrazyActionTrigger)
                 {
-                    foreach (var animal in AnimalsRepository.GetAll())
+                    foreach (var animal in _animalsRepository.GetAll())
                     {
                         if (animal is Owl owl)
                         {
@@ -237,8 +252,8 @@ namespace CrazyZoo
         {
             if (SelectedAnimal == null) return;
             string sound = SelectedAnimal.MakeSound();
-            Logs.Insert(0, new Log(SelectedAnimal, $"\"{sound}\""));
-            _logger.Log(new Log(SelectedAnimal, $"\"{sound}\""));
+            Logs.Insert(0, new Log(SelectedAnimal, string.Format(Resource1.sound, sound)));
+            _logger.Log(new Log(SelectedAnimal, string.Format(Resource1.sound, sound)));
         }
 
         public void ValidateFood()
@@ -271,11 +286,11 @@ namespace CrazyZoo
 
             if (result == false || newAnimal == null || selectedEnclosure == null) return;
 
-            AnimalsRepository.Add(newAnimal);
+            _animalsRepository.Add(newAnimal);
             selectedEnclosure.Add(newAnimal);
             SelectedAnimal = newAnimal;
 
-            foreach (var animal in AnimalsRepository.GetAll())
+            foreach (var animal in _animalsRepository.GetAll())
             {
                 if (animal is Crocodile crocodile && animal != newAnimal)
                 {
@@ -292,9 +307,9 @@ namespace CrazyZoo
             if (SelectedAnimal == null) return;
 
             FindSelectedAnimalEnclosure()?.Remove(SelectedAnimal);
-            AnimalsRepository.Remove(SelectedAnimal);
+            _animalsRepository.Remove(SelectedAnimal);
 
-            SelectedAnimal = AnimalsRepository.GetAll().FirstOrDefault();
+            SelectedAnimal = _animalsRepository.GetAll().FirstOrDefault();
             RecalculateStatistics();
         }
 
@@ -307,14 +322,14 @@ namespace CrazyZoo
         {
             _statistics.Clear();
             
-            records = AnimalsRepository.GetAll().GroupBy(a => a.Type).Select(g => new RecordItem(g.Key, g.Count(), g.Average(a => a.Age))).ToList();
+            records = _animalsRepository.GetAll().GroupBy(a => a.Type).Select(g => new RecordItem(g.Key, g.Count(), g.Average(a => a.Age))).ToList();
 
             foreach (var record in records)
             {
                 _statistics.Add(String.Format(Resource1.statisticsRecord, record.Type, record.Count, FormatValue(record.Average)));
             }
 
-            Animal oldestAnimal = AnimalsRepository.GetAll().OrderByDescending(a => a.Age).FirstOrDefault();
+            Animal oldestAnimal = _animalsRepository.GetAll().OrderByDescending(a => a.Age).FirstOrDefault();
 
             if (oldestAnimal != null)
             {
@@ -331,8 +346,9 @@ namespace CrazyZoo
 
         private Enclosure<Animal> FindSelectedAnimalEnclosure()
         {
+            if (SelectedAnimal == null) return null;
 
-            Enclosure<Animal> enclosure = Enclosures.FirstOrDefault(e => e.Name == SelectedAnimalEnclosureName);
+            Enclosure<Animal> enclosure = Enclosures.FirstOrDefault(e => e.Id == SelectedAnimal.EnclosureId);
             if (enclosure == null || AnimalFood == null) return null;
             return enclosure;
         }
@@ -340,7 +356,7 @@ namespace CrazyZoo
         private string FormatValue(double value)
         {
             if ((int)value == value) return value.ToString();
-            return value.ToString("F2");
+            return value.ToString(Resource1.formatTwoDigitsAfterZero);
 
         }
     }

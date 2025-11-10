@@ -12,8 +12,9 @@ namespace CrazyZoo.Generics
 {
     public class Enclosure<T> : IRepository<T> where T : Animal
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public List<T> Items { get; } = new List<T>();
+        public ObservableCollection<T> Items { get; } = new ObservableCollection<T>();
 
         public event Action<T>? AnimalJoinedInSameEnclosure;
         public event Action<string>? FoodDropped;

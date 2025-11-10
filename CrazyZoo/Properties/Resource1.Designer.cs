@@ -178,6 +178,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crocodile.
+        /// </summary>
+        internal static string crocodile {
+            get {
+                return ResourceManager.GetString("crocodile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to hided into water..
         /// </summary>
         internal static string crocodileDefaultCrazyAction {
@@ -259,6 +268,150 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @age.
+        /// </summary>
+        internal static string dbAgeValue {
+            get {
+                return ResourceManager.GetString("dbAgeValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source=(localdb)\ProjectModels;Initial Catalog=CrazyZooDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False.
+        /// </summary>
+        internal static string dbConnectionString {
+            get {
+                return ResourceManager.GetString("dbConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM Animals WHERE Id=@id.
+        /// </summary>
+        internal static string dbDeleteAnimal {
+            get {
+                return ResourceManager.GetString("dbDeleteAnimal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM Animals.
+        /// </summary>
+        internal static string dbDeleteAnimals {
+            get {
+                return ResourceManager.GetString("dbDeleteAnimals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM Enclosures WHERE Id=@eid.
+        /// </summary>
+        internal static string dbDeleteEnclosure {
+            get {
+                return ResourceManager.GetString("dbDeleteEnclosure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM Enclosures.
+        /// </summary>
+        internal static string dbDeleteEnclosures {
+            get {
+                return ResourceManager.GetString("dbDeleteEnclosures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @description.
+        /// </summary>
+        internal static string dbDescriptionValue {
+            get {
+                return ResourceManager.GetString("dbDescriptionValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DBCC CHECKIDENT (&apos;Animals&apos;, RESEED, 0).
+        /// </summary>
+        internal static string dbDropAnimalsIdCounter {
+            get {
+                return ResourceManager.GetString("dbDropAnimalsIdCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DBCC CHECKIDENT (&apos;Enclosures&apos;, RESEED, 0).
+        /// </summary>
+        internal static string dbDropEnclosuresIdCounter {
+            get {
+                return ResourceManager.GetString("dbDropEnclosuresIdCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @eid.
+        /// </summary>
+        internal static string dbEnclosureIdValue {
+            get {
+                return ResourceManager.GetString("dbEnclosureIdValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @food.
+        /// </summary>
+        internal static string dbFoodValue {
+            get {
+                return ResourceManager.GetString("dbFoodValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id.
+        /// </summary>
+        internal static string dbIdValue {
+            get {
+                return ResourceManager.GetString("dbIdValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO Animals (Name, Age, Description, Type, PreferableFood, EnclosureId) OUTPUT INSERTED.Id  VALUES (@name, @age, @description, @type, @food, @eid).
+        /// </summary>
+        internal static string dbInsertAnimal {
+            get {
+                return ResourceManager.GetString("dbInsertAnimal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO Enclosures (Name) OUTPUT INSERTED.Id VALUES (@name).
+        /// </summary>
+        internal static string dbInsertEnclosure {
+            get {
+                return ResourceManager.GetString("dbInsertEnclosure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @name.
+        /// </summary>
+        internal static string dbNameValue {
+            get {
+                return ResourceManager.GetString("dbNameValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @type.
+        /// </summary>
+        internal static string dbTypeValue {
+            get {
+                return ResourceManager.GetString("dbTypeValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is {0}, he or she is {1} years old..
         /// </summary>
         internal static string describeDefault {
@@ -282,6 +435,15 @@ namespace CrazyZoo.Properties {
         internal static string emptyListJson {
             get {
                 return ResourceManager.GetString("emptyListJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}.
+        /// </summary>
+        internal static string emptyString {
+            get {
+                return ResourceManager.GetString("emptyString", resourceCulture);
             }
         }
         
@@ -336,6 +498,15 @@ namespace CrazyZoo.Properties {
         internal static string forestVoljeerName {
             get {
                 return ResourceManager.GetString("forestVoljeerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to F2.
+        /// </summary>
+        internal static string formatTwoDigitsAfterZero {
+            get {
+                return ResourceManager.GetString("formatTwoDigitsAfterZero", resourceCulture);
             }
         }
         
@@ -466,6 +637,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lion.
+        /// </summary>
+        internal static string lion {
+            get {
+                return ResourceManager.GetString("lion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to haven&apos;t been fed for {0} seconds, now is feeling fresh and playing with a ball as a kitten..
         /// </summary>
         internal static string lionCrazyAction {
@@ -565,6 +745,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monkey.
+        /// </summary>
+        internal static string monkey {
+            get {
+                return ResourceManager.GetString("monkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to runs around the enclosure like crazy..
         /// </summary>
         internal static string monkeyDefaultCrazyAction {
@@ -633,6 +822,24 @@ namespace CrazyZoo.Properties {
         internal static string monkeyTriggerFood {
             get {
                 return ResourceManager.GetString("monkeyTriggerFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Owl.
+        /// </summary>
+        internal static string owl {
+            get {
+                return ResourceManager.GetString("owl", resourceCulture);
             }
         }
         
@@ -799,6 +1006,15 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;{0}&quot;.
+        /// </summary>
+        internal static string sound {
+            get {
+                return ResourceManager.GetString("sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}s: {1} (avg {2} ages).
         /// </summary>
         internal static string statisticsRecord {
@@ -840,6 +1056,24 @@ namespace CrazyZoo.Properties {
         internal static string tropicsVoljeerName {
             get {
                 return ResourceManager.GetString("tropicsVoljeerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown animal type: .
+        /// </summary>
+        internal static string unknownAnimalType {
+            get {
+                return ResourceManager.GetString("unknownAnimalType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zebra.
+        /// </summary>
+        internal static string zebra {
+            get {
+                return ResourceManager.GetString("zebra", resourceCulture);
             }
         }
         

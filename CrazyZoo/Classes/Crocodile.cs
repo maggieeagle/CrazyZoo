@@ -5,7 +5,7 @@ using System.Windows.Threading;
 
 public class Crocodile : Animal, ICrazyAction
 {
-    public Crocodile(string name, int age, string description) : base(name, age, description)
+    public Crocodile(string name, int age, string description, int enclosureId) : base(name, age, description, enclosureId)
     {
         timeBetweenBites = 2;
         bitesUntilFull = 2;

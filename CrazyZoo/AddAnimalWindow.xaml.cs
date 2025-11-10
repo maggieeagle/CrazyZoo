@@ -1,4 +1,5 @@
-﻿using CrazyZoo.Generics;
+﻿using CrazyZoo.Classes;
+using CrazyZoo.Generics;
 using CrazyZoo.Properties;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
@@ -13,11 +14,6 @@ namespace CrazyZoo
     public partial class AddAnimalWindow : Window
     {
         const int maxAge = 150;
-        const string crocodile = "Crocodile";
-        const string lion = "Lion";
-        const string monkey = "Monkey";
-        const string owl = "Owl";
-        const string zebra = "Zebra";
 
         public Animal? NewAnimal { get; private set; }
         public Enclosure<Animal>? SelectedEnclosure { get; private set; }
@@ -39,7 +35,7 @@ namespace CrazyZoo
             AnimalSpecieComboBox.ItemsSource = Enum.GetValues(typeof(AnimalSpecies));
             AnimalSpecieComboBox.SelectedIndex = 0;
             VoljeerComboBox.ItemsSource = enclosures;
-            VoljeerComboBox.DisplayMemberPath = "Name";
+            VoljeerComboBox.DisplayMemberPath = Resource1.name;
             if (enclosures.Count > 0) VoljeerComboBox.SelectedIndex= 0;
             NewAnimal = animal;
             Enclosures = enclosures;
@@ -62,13 +58,13 @@ namespace CrazyZoo
             }
             else
             {
-                AnimalNameError.Text = "";
+                AnimalNameError.Text = string.Empty;
             }
         }
 
         private void AnimalAgeTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            AnimalAgeError.Text = "";
+            AnimalAgeError.Text = string.Empty;
             try
             {
                 int time = Int32.Parse(AnimalAge.Text);
@@ -80,7 +76,7 @@ namespace CrazyZoo
                 }
                 else if (time > maxAge)
                 {
-                    AnimalAgeError.Text = Properties.Resource1.ageMustBeLessThenError + $"{maxAge}";
+                    AnimalAgeError.Text = Properties.Resource1.ageMustBeLessThenError + string.Format(Resource1.emptyString, maxAge);
                     return;
                 }
             }
@@ -94,17 +90,17 @@ namespace CrazyZoo
         {
             if (ErrorsInForm())
             {
-                AddAnimalFormError.Text = Properties.Resource1.incorrectValuesError;
+                AddAnimalFormError.Text = Resource1.incorrectValuesError;
             }
             else if (FieldIsEmpty())
             {
-                AddAnimalFormError.Text = Properties.Resource1.emptyFieldsError;
+                AddAnimalFormError.Text = Resource1.emptyFieldsError;
             }
             else
             {
-                AddAnimalFormError.Text = "";
+                AddAnimalFormError.Text = string.Empty;
 
-                string specie = "";
+                string specie = string.Empty;
                 if (AnimalSpecieComboBox.SelectedItem is AnimalSpecies specieEnum)
                 {
                     specie = specieEnum.ToString();
@@ -113,17 +109,9 @@ namespace CrazyZoo
                 int age = Int32.Parse(AnimalAge.Text.Trim());
                 string description = AnimalDescription.Text.Trim();
 
-                NewAnimal = specie switch
-                {
-                    crocodile => new Crocodile(name, age, description),
-                    lion => new Lion(name, age, description),
-                    monkey => new Monkey(name, age, description),
-                    owl => new Owl(name, age, description),
-                    zebra => new Zebra(name, age, description),
-                    _ => null
-                };
+                SelectedEnclosure = VoljeerComboBox.SelectedItem as Enclosure<Animal>;
 
-                SelectedEnclosure = Enclosures?[VoljeerComboBox.SelectedIndex];
+                NewAnimal = AnimalFactory.CreateAnimal(specie, name, age, description, SelectedEnclosure.Id);
 
                 if (NewAnimal == null)
                 {

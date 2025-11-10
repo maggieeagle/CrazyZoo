@@ -8,7 +8,7 @@ public class Lion : Animal, ICrazyAction
     public readonly int DigestTime = 20;
     public bool HasActedCrazy = false;
 
-    public Lion(string name, int age, string description) : base(name, age, description)
+    public Lion(string name, int age, string description, int enclosureId) : base(name, age, description, enclosureId)
     {
         timeBetweenBites = 10;
         bitesUntilFull = 10;

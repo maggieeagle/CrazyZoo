@@ -402,4 +402,82 @@
   <data name="timestampElementXml" xml:space="preserve">
     <value>Timestamp</value>
   </data>
+  <data name="dbConnectionString" xml:space="preserve">
+    <value>Data Source=(localdb)\ProjectModels;Initial Catalog=CrazyZooDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False</value>
+  </data>
+  <data name="dbDeleteAnimals" xml:space="preserve">
+    <value>DELETE FROM Animals</value>
+  </data>
+  <data name="dbDeleteEnclosures" xml:space="preserve">
+    <value>DELETE FROM Enclosures</value>
+  </data>
+  <data name="dbDropAnimalsIdCounter" xml:space="preserve">
+    <value>DBCC CHECKIDENT ('Animals', RESEED, 0)</value>
+  </data>
+  <data name="dbDropEnclosuresIdCounter" xml:space="preserve">
+    <value>DBCC CHECKIDENT ('Enclosures', RESEED, 0)</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="emptyString" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="dbInsertEnclosure" xml:space="preserve">
+    <value>INSERT INTO Enclosures (Name) OUTPUT INSERTED.Id VALUES (@name)</value>
+  </data>
+  <data name="dbNameValue" xml:space="preserve">
+    <value>@name</value>
+  </data>
+  <data name="dbDeleteEnclosure" xml:space="preserve">
+    <value>DELETE FROM Enclosures WHERE Id=@eid</value>
+  </data>
+  <data name="dbEnclosureIdValue" xml:space="preserve">
+    <value>@eid</value>
+  </data>
+  <data name="dbInsertAnimal" xml:space="preserve">
+    <value>INSERT INTO Animals (Name, Age, Description, Type, PreferableFood, EnclosureId) OUTPUT INSERTED.Id  VALUES (@name, @age, @description, @type, @food, @eid)</value>
+  </data>
+  <data name="dbAgeValue" xml:space="preserve">
+    <value>@age</value>
+  </data>
+  <data name="dbDescriptionValue" xml:space="preserve">
+    <value>@description</value>
+  </data>
+  <data name="dbTypeValue" xml:space="preserve">
+    <value>@type</value>
+  </data>
+  <data name="dbFoodValue" xml:space="preserve">
+    <value>@food</value>
+  </data>
+  <data name="dbIdValue" xml:space="preserve">
+    <value>@id</value>
+  </data>
+  <data name="dbDeleteAnimal" xml:space="preserve">
+    <value>DELETE FROM Animals WHERE Id=@id</value>
+  </data>
+  <data name="lion" xml:space="preserve">
+    <value>Lion</value>
+  </data>
+  <data name="zebra" xml:space="preserve">
+    <value>Zebra</value>
+  </data>
+  <data name="crocodile" xml:space="preserve">
+    <value>Crocodile</value>
+  </data>
+  <data name="monkey" xml:space="preserve">
+    <value>Monkey</value>
+  </data>
+  <data name="owl" xml:space="preserve">
+    <value>Owl</value>
+  </data>
+  <data name="unknownAnimalType" xml:space="preserve">
+    <value>Unknown animal type: </value>
+  </data>
+  <data name="formatTwoDigitsAfterZero" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="sound" xml:space="preserve">
+    <value>"{0}"</value>
+  </data>
 </root>

@@ -7,12 +7,15 @@ namespace CrazyZoo
 {
     public abstract class Animal
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
 
         public string Description { get; set; }
 
         public abstract string PreferableFood { get; }
+
+        public int EnclosureId { get; set; }
 
         public string Type
         {
@@ -31,7 +34,7 @@ namespace CrazyZoo
         protected int bitesMade = 0;
         public string FoodDropped = String.Empty;
 
-        protected Animal(string name, int age, string description)
+        protected Animal(string name, int age, string description, int enclosureId)
         {
             Name = name;
             Age = age;
@@ -42,6 +45,7 @@ namespace CrazyZoo
             {
                 Description = Describe();
             }
+            EnclosureId = enclosureId;
             setEatProgressTimer();
         }
 

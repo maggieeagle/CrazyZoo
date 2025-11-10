@@ -12,7 +12,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Name="AnimalList" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding AnimalsRepository.Items}" SelectedItem="{Binding SelectedAnimal}" RenderTransformOrigin="-0.626,0.529" Height="264" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
+        <ListBox Name="AnimalList" d:ItemsSource="{d:SampleData ItemCount=5}" ItemsSource="{Binding Animals}" SelectedItem="{Binding SelectedAnimal}" RenderTransformOrigin="-0.626,0.529" Height="264" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -37,7 +37,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="180,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="16"><Run Text="Voljeer:"/><LineBreak/><Run/><LineBreak/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="VoljeerValue" HorizontalAlignment="Left" Margin="254,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="16"  Text="{Binding SelectedAnimalEnclosureName}"/>
+        <TextBlock x:Name="VoljeerValue" HorizontalAlignment="Left" Margin="254,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="16"  Text="{Binding SelectedAnimalEnclosureName}"/>
         <TextBlock HorizontalAlignment="Left" Margin="180,40,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="42" Height="16"/>
         <TextBlock Name="AnimalNameValue" HorizontalAlignment="Left" Margin="254,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="16"  Text="{Binding SelectedAnimal.Name}"/>
         <TextBlock HorizontalAlignment="Left" Margin="180,61,0,0" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top" Width="42" Height="16"/>

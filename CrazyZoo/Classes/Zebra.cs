@@ -7,7 +7,7 @@ public class Zebra : Animal, ICrazyAction
     private const int portionsLimit = 5;
     private int foodPortions = 0;
 
-    public Zebra(string name, int age, string description) : base(name, age, description)
+    public Zebra(string name, int age, string description, int enclosureId) : base(name, age, description, enclosureId)
     {
         timeBetweenBites = 1;
         bitesUntilFull = 20;

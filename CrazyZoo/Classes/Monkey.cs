@@ -6,7 +6,7 @@ public class Monkey : Animal, ICrazyAction
 {
     private readonly string _triggerFood = Resource1.monkeyTriggerFood;
 
-    public Monkey(string name, int age, string description) : base(name, age, description)
+    public Monkey(string name, int age, string description, int enclosureId) : base(name, age, description, enclosureId)
     {
         timeBetweenBites = 1;
         bitesUntilFull = 15;

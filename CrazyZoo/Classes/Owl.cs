@@ -23,7 +23,7 @@ public class Owl : Animal, IFlyable, ICrazyAction
         Resource1.owlWisdom5
     };
 
-    public Owl(string name, int age, string description) : base(name, age, description)
+    public Owl(string name, int age, string description, int enclosureId) : base(name, age, description, enclosureId)
     {
         timeBetweenBites = 1;
         bitesUntilFull = 3;
