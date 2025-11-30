@@ -13,7 +13,7 @@ using System.Windows.Media;
 
 namespace CrazyZoo
 {
-    public partial class App : Application
+    public partial class App : System.Windows.Application
     {
         public static IServiceProvider Services;
         private string _connectionString;
@@ -60,16 +60,14 @@ namespace CrazyZoo
                 string sql = string.Format("CREATE DATABASE [{0}];", databaseName);
                 using var cmd = new SqlCommand(sql, newConn);
                 cmd.ExecuteNonQuery();
-                createTables();
+                createTables(newConn);
             }
             using var finalConn = new SqlConnection(_connectionString);
             finalConn.Open();
         }
 
-        private void createTables()
+        private void createTables(SqlConnection conn)
         {
-            using var conn = new SqlConnection(_connectionString);
-            conn.Open();
             using (var cmd = new SqlCommand(@"CREATE TABLE [dbo].[Enclosures] (
     [Id]   INT            IDENTITY (1, 1) NOT NULL,
     [Name] NVARCHAR (100) NULL,
