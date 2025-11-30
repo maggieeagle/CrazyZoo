@@ -60,33 +60,39 @@ namespace CrazyZoo
                 string sql = string.Format("CREATE DATABASE [{0}];", databaseName);
                 using var cmd = new SqlCommand(sql, newConn);
                 cmd.ExecuteNonQuery();
-                createTables(newConn);
             }
             using var finalConn = new SqlConnection(_connectionString);
             finalConn.Open();
+            createTables(finalConn);
         }
 
         private void createTables(SqlConnection conn)
         {
-            using (var cmd = new SqlCommand(@"CREATE TABLE [dbo].[Enclosures] (
-    [Id]   INT            IDENTITY (1, 1) NOT NULL,
-    [Name] NVARCHAR (100) NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
-);", conn))
+            using (var cmd = new SqlCommand(@"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Enclosures' AND xtype='U')
+            BEGIN
+            CREATE TABLE [dbo].[Enclosures] (
+                [Id]   INT            IDENTITY (1, 1) NOT NULL,
+                [Name] NVARCHAR (100) NULL,
+                PRIMARY KEY CLUSTERED ([Id] ASC)
+            );
+            END", conn))
             {
                 cmd.ExecuteNonQuery();
             }
-            using (var cmd = new SqlCommand(@"CREATE TABLE[dbo].[Animals](
-    [Id]             INT            IDENTITY(1, 1) NOT NULL,
-    [Name]           NVARCHAR(100) NULL,
-    [Description]    NVARCHAR(100) NULL,
-    [Age]            INT            NULL,
-    [Type]           NVARCHAR(50)  NULL,
-    [PreferableFood] NVARCHAR(100) NULL,
-    [EnclosureId]    INT            NULL,
-    PRIMARY KEY CLUSTERED([Id] ASC),
-    CONSTRAINT[FK_Animals_Enclosures] FOREIGN KEY([EnclosureId]) REFERENCES[dbo].[Enclosures]([Id])
-);", conn))
+            using (var cmd = new SqlCommand(@"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Animals' AND xtype='U')
+                BEGIN
+                CREATE TABLE [dbo].[Animals](
+                [Id]             INT            IDENTITY(1, 1) NOT NULL,
+                [Name]           NVARCHAR(100) NULL,
+                [Description]    NVARCHAR(100) NULL,
+                [Age]            INT            NULL,
+                [Type]           NVARCHAR(50)  NULL,
+                [PreferableFood] NVARCHAR(100) NULL,
+                [EnclosureId]    INT            NULL,
+                PRIMARY KEY CLUSTERED([Id] ASC),
+                CONSTRAINT[FK_Animals_Enclosures] FOREIGN KEY([EnclosureId]) REFERENCES[dbo].[Enclosures]([Id])
+            );
+            END", conn))
             {
                 cmd.ExecuteNonQuery();
             }
