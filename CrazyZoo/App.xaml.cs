@@ -4,9 +4,11 @@ using CrazyZoo.Interfaces;
 using CrazyZoo.Properties;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Graph.Models;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace CrazyZoo
@@ -55,16 +57,42 @@ namespace CrazyZoo
                 csb.InitialCatalog = "master";
                 using var newConn = new SqlConnection(csb.ToString());
                 newConn.Open();
-                string sql = $@"
-                    IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = '{databaseName}')
-                    CREATE DATABASE [{databaseName}];
-                ";
-
+                string sql = string.Format("CREATE DATABASE [{0}];", databaseName);
                 using var cmd = new SqlCommand(sql, newConn);
                 cmd.ExecuteNonQuery();
+                createTables();
             }
             using var finalConn = new SqlConnection(_connectionString);
             finalConn.Open();
+        }
+
+        private void createTables()
+        {
+            using var conn = new SqlConnection(_connectionString);
+            conn.Open();
+            using (var cmd = new SqlCommand(@"CREATE TABLE [dbo].[Enclosures] (
+    [Id]   INT            IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR (100) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);", conn))
+            {
+                cmd.ExecuteNonQuery();
+            }
+            using (var cmd = new SqlCommand(@"CREATE TABLE[dbo].[Animals](
+    [Id]             INT            IDENTITY(1, 1) NOT NULL,
+    [Name]           NVARCHAR(100) NULL,
+    [Description]    NVARCHAR(100) NULL,
+    [Age]            INT            NULL,
+    [Type]           NVARCHAR(50)  NULL,
+    [PreferableFood] NVARCHAR(100) NULL,
+    [EnclosureId]    INT            NULL,
+    PRIMARY KEY CLUSTERED([Id] ASC),
+    CONSTRAINT[FK_Animals_Enclosures] FOREIGN KEY([EnclosureId]) REFERENCES[dbo].[Enclosures]([Id])
+);", conn))
+            {
+                cmd.ExecuteNonQuery();
+            }
+
         }
 
         private void clearDB()
