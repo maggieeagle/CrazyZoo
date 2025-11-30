@@ -1,18 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Logs>
-  <Log>
-    <Animal>Lion Simba</Animal>
-    <Information>is not interested in dfgdg and continue basking in the sun.</Information>
-    <Timestamp>2025-11-10T15:55:33.807554-08:00</Timestamp>
-  </Log>
-  <Log>
-    <Animal>Zebra Marty</Animal>
-    <Information>is not sure it is a good idea to become friends with dfgdg.</Information>
-    <Timestamp>2025-11-10T15:55:33.8234972-08:00</Timestamp>
-  </Log>
-  <Log>
-    <Animal>Crocodile Sandy</Animal>
-    <Information>is interested in new zoo inhabitant dfgdg.</Information>
-    <Timestamp>2025-11-10T15:55:33.8343035-08:00</Timestamp>
-  </Log>
-</Logs>
+<Logs />

@@ -33,11 +33,38 @@ namespace CrazyZoo
         {
             base.OnStartup(e);
 
+            createDBifNotExists();
             clearDB();
 
             var mainWindow = Services.GetRequiredService<MainWindow>();
             mainWindow.DataContext = Services.GetRequiredService<ZooViewModel>();
             mainWindow.Show();
+        }
+
+        private void createDBifNotExists()
+        {
+            using var conn = new SqlConnection(_connectionString);
+            try
+            {
+                conn.Open();
+            }
+            catch (SqlException)
+            {
+                var csb = new SqlConnectionStringBuilder(_connectionString);
+                string databaseName = csb.InitialCatalog;
+                csb.InitialCatalog = "master";
+                using var newConn = new SqlConnection(csb.ToString());
+                newConn.Open();
+                string sql = $@"
+                    IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = '{databaseName}')
+                    CREATE DATABASE [{databaseName}];
+                ";
+
+                using var cmd = new SqlCommand(sql, newConn);
+                cmd.ExecuteNonQuery();
+            }
+            using var finalConn = new SqlConnection(_connectionString);
+            finalConn.Open();
         }
 
         private void clearDB()
