@@ -286,6 +286,49 @@ namespace CrazyZoo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IF NOT EXISTS (SELECT * FROM sysobjects WHERE name=&apos;Animals&apos; AND xtype=&apos;U&apos;)
+        ///                BEGIN
+        ///                CREATE TABLE [dbo].[Animals](
+        ///                [Id]             INT            IDENTITY(1, 1) NOT NULL,
+        ///                [Name]           NVARCHAR(100) NULL,
+        ///                [Description]    NVARCHAR(100) NULL,
+        ///                [Age]            INT            NULL,
+        ///                [Type]           NVARCHAR(50)  NULL,
+        ///                [PreferableFood] NVARCHAR(100) NULL,
+        ///                [Enc [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string dbCreateAnimalsTableIfNotExists {
+            get {
+                return ResourceManager.GetString("dbCreateAnimalsTableIfNotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE DATABASE [{0}];.
+        /// </summary>
+        internal static string dbCreateDB {
+            get {
+                return ResourceManager.GetString("dbCreateDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IF NOT EXISTS (SELECT * FROM sysobjects WHERE name=&apos;Enclosures&apos; AND xtype=&apos;U&apos;)
+        ///            BEGIN
+        ///            CREATE TABLE [dbo].[Enclosures] (
+        ///                [Id]   INT            IDENTITY (1, 1) NOT NULL,
+        ///                [Name] NVARCHAR (100) NULL,
+        ///                PRIMARY KEY CLUSTERED ([Id] ASC)
+        ///            );
+        ///            END.
+        /// </summary>
+        internal static string dbCreateEnclosuresTableIfNotExists {
+            get {
+                return ResourceManager.GetString("dbCreateEnclosuresTableIfNotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DELETE FROM Animals WHERE Id=@id.
         /// </summary>
         internal static string dbDeleteAnimal {
@@ -741,6 +784,15 @@ namespace CrazyZoo.Properties {
         internal static string logElementXml {
             get {
                 return ResourceManager.GetString("logElementXml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to master.
+        /// </summary>
+        internal static string master {
+            get {
+                return ResourceManager.GetString("master", resourceCulture);
             }
         }
         

@@ -480,4 +480,36 @@
   <data name="sound" xml:space="preserve">
     <value>"{0}"</value>
   </data>
+  <data name="master" xml:space="preserve">
+    <value>master</value>
+  </data>
+  <data name="dbCreateDB" xml:space="preserve">
+    <value>CREATE DATABASE [{0}];</value>
+  </data>
+  <data name="dbCreateEnclosuresTableIfNotExists" xml:space="preserve">
+    <value>IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Enclosures' AND xtype='U')
+            BEGIN
+            CREATE TABLE [dbo].[Enclosures] (
+                [Id]   INT            IDENTITY (1, 1) NOT NULL,
+                [Name] NVARCHAR (100) NULL,
+                PRIMARY KEY CLUSTERED ([Id] ASC)
+            );
+            END</value>
+  </data>
+  <data name="dbCreateAnimalsTableIfNotExists" xml:space="preserve">
+    <value>IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Animals' AND xtype='U')
+                BEGIN
+                CREATE TABLE [dbo].[Animals](
+                [Id]             INT            IDENTITY(1, 1) NOT NULL,
+                [Name]           NVARCHAR(100) NULL,
+                [Description]    NVARCHAR(100) NULL,
+                [Age]            INT            NULL,
+                [Type]           NVARCHAR(50)  NULL,
+                [PreferableFood] NVARCHAR(100) NULL,
+                [EnclosureId]    INT            NULL,
+                PRIMARY KEY CLUSTERED([Id] ASC),
+                CONSTRAINT[FK_Animals_Enclosures] FOREIGN KEY([EnclosureId]) REFERENCES[dbo].[Enclosures]([Id])
+            );
+            END</value>
+  </data>
 </root>

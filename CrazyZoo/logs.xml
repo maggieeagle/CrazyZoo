@@ -1,2 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Logs />
+<Logs>
+  <Log>
+    <Animal>Lion Simba</Animal>
+    <Information>"Arrr!"</Information>
+    <Timestamp>2025-11-30T08:47:44.9987224-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>ate grass.</Information>
+    <Timestamp>2025-11-30T08:47:47.1688874-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>ate grass.</Information>
+    <Timestamp>2025-11-30T08:47:47.611205-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>doesn't want more food; Marty is now full of energy, runs around and bucks.</Information>
+    <Timestamp>2025-11-30T08:47:47.7684732-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>doesn't want more food; Marty is now full of energy, runs around and bucks.</Information>
+    <Timestamp>2025-11-30T08:47:47.9291855-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>doesn't want more food; Marty is now full of energy, runs around and bucks.</Information>
+    <Timestamp>2025-11-30T08:47:48.0581931-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Lion Simba</Animal>
+    <Information>is eating grass - progress █▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:51.2157654-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:51.257562-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:52.5161625-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress ███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:53.6871369-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:56.1666521-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:57.1749369-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress ██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:58.1768837-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress ███████▒▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:47:59.4320708-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress ████████▒▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:48:00.5169053-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Lion Simba</Animal>
+    <Information>is not interested in erfer and continue basking in the sun.</Information>
+    <Timestamp>2025-11-30T08:48:01.0884491-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is not sure it is a good idea to become friends with erfer.</Information>
+    <Timestamp>2025-11-30T08:48:01.1028456-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Crocodile Sandy</Animal>
+    <Information>is interested in new zoo inhabitant erfer.</Information>
+    <Timestamp>2025-11-30T08:48:01.1297206-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Lion Simba</Animal>
+    <Information>is eating grass - progress ██▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:48:01.6958666-08:00</Timestamp>
+  </Log>
+  <Log>
+    <Animal>Zebra Marty</Animal>
+    <Information>is eating grass - progress █████████▒▒▒▒▒▒▒▒▒▒▒</Information>
+    <Timestamp>2025-11-30T08:48:01.7153134-08:00</Timestamp>
+  </Log>
+</Logs>

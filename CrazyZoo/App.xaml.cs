@@ -54,10 +54,10 @@ namespace CrazyZoo
             {
                 var csb = new SqlConnectionStringBuilder(_connectionString);
                 string databaseName = csb.InitialCatalog;
-                csb.InitialCatalog = "master";
+                csb.InitialCatalog = Resource1.master;
                 using var newConn = new SqlConnection(csb.ToString());
                 newConn.Open();
-                string sql = string.Format("CREATE DATABASE [{0}];", databaseName);
+                string sql = string.Format(Resource1.dbCreateDB, databaseName);
                 using var cmd = new SqlCommand(sql, newConn);
                 cmd.ExecuteNonQuery();
             }
@@ -68,31 +68,11 @@ namespace CrazyZoo
 
         private void createTables(SqlConnection conn)
         {
-            using (var cmd = new SqlCommand(@"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Enclosures' AND xtype='U')
-            BEGIN
-            CREATE TABLE [dbo].[Enclosures] (
-                [Id]   INT            IDENTITY (1, 1) NOT NULL,
-                [Name] NVARCHAR (100) NULL,
-                PRIMARY KEY CLUSTERED ([Id] ASC)
-            );
-            END", conn))
+            using (var cmd = new SqlCommand(Resource1.dbCreateEnclosuresTableIfNotExists, conn))
             {
                 cmd.ExecuteNonQuery();
             }
-            using (var cmd = new SqlCommand(@"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Animals' AND xtype='U')
-                BEGIN
-                CREATE TABLE [dbo].[Animals](
-                [Id]             INT            IDENTITY(1, 1) NOT NULL,
-                [Name]           NVARCHAR(100) NULL,
-                [Description]    NVARCHAR(100) NULL,
-                [Age]            INT            NULL,
-                [Type]           NVARCHAR(50)  NULL,
-                [PreferableFood] NVARCHAR(100) NULL,
-                [EnclosureId]    INT            NULL,
-                PRIMARY KEY CLUSTERED([Id] ASC),
-                CONSTRAINT[FK_Animals_Enclosures] FOREIGN KEY([EnclosureId]) REFERENCES[dbo].[Enclosures]([Id])
-            );
-            END", conn))
+            using (var cmd = new SqlCommand(Resource1.dbCreateAnimalsTableIfNotExists, conn))
             {
                 cmd.ExecuteNonQuery();
             }
